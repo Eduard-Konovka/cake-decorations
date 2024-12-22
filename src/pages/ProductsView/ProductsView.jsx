@@ -48,7 +48,7 @@ export default function ProductsView({ productsByCategoryOrTag, addToCart }) {
         .then(products => {
           products.sort(
             (firstProduct, secondProduct) =>
-              firstProduct._id - secondProduct._id,
+              secondProduct._id - firstProduct._id,
           );
           changeGlobalState(updateProducts, products);
           setProductsByName(products);
@@ -251,10 +251,10 @@ export default function ProductsView({ productsByCategoryOrTag, addToCart }) {
   function handleSort(event) {
     const value = event.target.value;
 
-    const ascendingCode = [...visibleProducts].sort(
+    const ascendingDate = [...visibleProducts].sort(
       (firstProduct, secondProduct) => firstProduct._id - secondProduct._id,
     );
-    const descendingCode = [...visibleProducts].sort(
+    const descendingDate = [...visibleProducts].sort(
       (firstProduct, secondProduct) => secondProduct._id - firstProduct._id,
     );
     const ascendingPrice = [...visibleProducts].sort(
@@ -265,13 +265,13 @@ export default function ProductsView({ productsByCategoryOrTag, addToCart }) {
     );
 
     switch (value) {
-      case 'ascendingCode':
-        setVisibleProducts(ascendingCode);
+      case 'ascendingDate':
+        setVisibleProducts(ascendingDate);
         setOrdinalOfDozen(1);
         break;
 
-      case 'descendingCode':
-        setVisibleProducts(descendingCode);
+      case 'descendingDate':
+        setVisibleProducts(descendingDate);
         setOrdinalOfDozen(1);
         break;
 
@@ -286,7 +286,7 @@ export default function ProductsView({ productsByCategoryOrTag, addToCart }) {
         break;
 
       default:
-        setVisibleProducts(ascendingCode);
+        setVisibleProducts(descendingDate);
         setOrdinalOfDozen(1);
         break;
     }
@@ -390,11 +390,11 @@ export default function ProductsView({ productsByCategoryOrTag, addToCart }) {
                 <option value={'descendingPrice'}>
                   {languageDeterminer(LANGUAGE.sortBy.descendingPrice)}
                 </option>
-                <option value={'ascendingCode'}>
-                  {languageDeterminer(LANGUAGE.sortBy.ascendingCode)}
+                <option value={'ascendingDate'}>
+                  {languageDeterminer(LANGUAGE.sortBy.ascendingDate)}
                 </option>
-                <option value={'descendingCode'}>
-                  {languageDeterminer(LANGUAGE.sortBy.descendingCode)}
+                <option value={'descendingDate'} selected>
+                  {languageDeterminer(LANGUAGE.sortBy.descendingDate)}
                 </option>
               </select>
             </form>
