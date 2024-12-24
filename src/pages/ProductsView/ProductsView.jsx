@@ -382,6 +382,7 @@ export default function ProductsView({ productsByCategoryOrTag, addToCart }) {
                 id="inputBySort"
                 name="inputBySort"
                 className={s.inputBySort}
+                defaultValue={'descendingDate'}
                 onChange={handleSort}
               >
                 <option value={'ascendingPrice'}>
@@ -393,7 +394,7 @@ export default function ProductsView({ productsByCategoryOrTag, addToCart }) {
                 <option value={'ascendingDate'}>
                   {languageDeterminer(LANGUAGE.sortBy.ascendingDate)}
                 </option>
-                <option value={'descendingDate'} selected>
+                <option value={'descendingDate'}>
                   {languageDeterminer(LANGUAGE.sortBy.descendingDate)}
                 </option>
               </select>
