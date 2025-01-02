@@ -75,7 +75,7 @@ export default function Product({ product, addToCart }) {
           <p className={s.shortDescription}>
             {getPureText(
               language === 'RU'
-                ? product?.ruDescription
+                ? product?.ruDescription || product?.description
                 : product?.uaDescription || product?.description,
             )}
           </p>
