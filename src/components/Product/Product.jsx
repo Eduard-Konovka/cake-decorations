@@ -115,10 +115,10 @@ export default function Product({ product, addToCart }) {
 Product.propTypes = {
   product: PropTypes.shape({
     _id: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
+    title: PropTypes.string,
     uaTitle: PropTypes.string,
     ruTitle: PropTypes.string,
-    description: PropTypes.string.isRequired,
+    description: PropTypes.string,
     uaDescription: PropTypes.string,
     ruDescription: PropTypes.string,
     category: PropTypes.string.isRequired,
