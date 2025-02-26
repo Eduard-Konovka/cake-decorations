@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { useGlobalState } from 'state';
 import Button from 'components/Button';
 import { getLanguage, getCategory } from 'functions';
-import { languageWrapper } from 'middlewares';
+import { languageWrapper, titleWrapper, descriptionWrapper } from 'middlewares';
 import { GLOBAL, LANGUAGE } from 'constants';
 import defaultImage from 'assets/notFound.png';
 import s from './Product.module.css';
@@ -55,7 +55,7 @@ export default function Product({ product, addToCart }) {
           <img
             className={s.image}
             src={product?.images?.length > 0 ? product.images[0] : defaultImage}
-            alt={language === 'RU' ? product.ruTitle : product.uaTitle}
+            alt={titleWrapper(language, product)}
           />
         </div>
 
@@ -73,11 +73,7 @@ export default function Product({ product, addToCart }) {
           </h3>
 
           <p className={s.shortDescription}>
-            {getPureText(
-              language === 'RU'
-                ? product?.ruDescription || product?.description
-                : product?.uaDescription || product?.description,
-            )}
+            {getPureText(descriptionWrapper(language, product))}
           </p>
         </div>
       </Link>

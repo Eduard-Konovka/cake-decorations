@@ -13,7 +13,7 @@ import {
 import { fetchCategories, fetchProduct, fetchTags, fetchLinks } from 'api';
 import { Spinner, Button, Tags, Links, CountForm, Modal } from 'components';
 import { getLanguage, getCategory, getTags, pageUp } from 'functions';
-import { languageWrapper } from 'middlewares';
+import { languageWrapper, titleWrapper, descriptionWrapper } from 'middlewares';
 import { GLOBAL, LANGUAGE } from 'constants';
 import imageNotFound from 'assets/notFound.png';
 import s from './SpecificProductView.module.css';
@@ -119,29 +119,16 @@ export default function SpecificProductView({
       tagsDictionary &&
       linksDictionary
     ) {
-      setTags(
-        getTags(
-          language === 'RU' ? product.ruTitle : product.uaTitle,
-          tagsDictionary,
-          'tags',
-        ),
-      );
+      setTags(getTags(titleWrapper(language, product), tagsDictionary, 'tags'));
       setLinks(
-        getTags(
-          language === 'RU' ? product.ruTitle : product.uaTitle,
-          linksDictionary,
-          'links',
-        ),
+        getTags(titleWrapper(language, product), linksDictionary, 'links'),
       );
     }
   }, [language, product, tagsDictionary, linksDictionary]);
 
   useEffect(() => {
     const description = document.querySelector('#description');
-    description.innerHTML =
-      language === 'RU'
-        ? product.ruDescription
-        : product.uaDescription || product.description;
+    description.innerHTML = descriptionWrapper(language, product);
   }, [language, product]);
 
   const toggleModal = () => {
@@ -171,7 +158,7 @@ export default function SpecificProductView({
                     ? product.images[mainImageIdx]
                     : imageNotFound
                 }
-                alt={language === 'RU' ? product.ruTitle : product.uaTitle}
+                alt={titleWrapper(language, product)}
                 className={s.mainImage}
                 onClick={toggleModal}
               />
@@ -182,9 +169,7 @@ export default function SpecificProductView({
                     <img
                       key={imageLink}
                       src={imageLink}
-                      alt={
-                        language === 'RU' ? product.ruTitle : product.uaTitle
-                      }
+                      alt={titleWrapper(language, product)}
                       className={s.additionalImage}
                       onClick={() => setMainImageIdx(idx)}
                     />
@@ -196,9 +181,7 @@ export default function SpecificProductView({
             <div className={s.thumb}>
               <div className={s.monitor}>
                 <section className={s.statsSection}>
-                  <h3 className={s.title}>
-                    {language === 'RU' ? product.ruTitle : product.uaTitle}
-                  </h3>
+                  <h3 className={s.title}>{titleWrapper(language, product)}</h3>
                   <p className={s.stat}>
                     <span className={s.statName}>
                       {languageDeterminer(
