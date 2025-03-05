@@ -115,7 +115,7 @@ export default function SpecificProductView({
 
   useEffect(() => {
     if (
-      (product.uaTitle || product.ruTitle) &&
+      product?.title?.['ua' || 'ru' || 'en'] &&
       tagsDictionary &&
       linksDictionary
     ) {
@@ -155,7 +155,7 @@ export default function SpecificProductView({
               <img
                 src={
                   product?.images?.length > 0
-                    ? product.images[mainImageIdx]
+                    ? product.images[mainImageIdx].url
                     : imageNotFound
                 }
                 alt={titleWrapper(language, product)}
@@ -165,10 +165,10 @@ export default function SpecificProductView({
 
               {product?.images?.length > 1 && (
                 <div className={s.additionalImagesBox}>
-                  {product.images.map((imageLink, idx) => (
+                  {product.images.map((imageObj, idx) => (
                     <img
-                      key={imageLink}
-                      src={imageLink}
+                      key={imageObj.url}
+                      src={imageObj.url}
                       alt={titleWrapper(language, product)}
                       className={s.additionalImage}
                       onClick={() => setMainImageIdx(idx)}

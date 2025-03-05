@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { useGlobalState } from 'state';
 import { CountForm, Button } from 'components';
 import { getLanguage } from 'functions';
-import { languageWrapper } from 'middlewares';
+import { languageWrapper, titleWrapper } from 'middlewares';
 import { GLOBAL, LANGUAGE } from 'constants';
 import defaultImage from 'assets/notFound.png';
 import s from './SelectedProduct.module.css';
@@ -13,7 +14,8 @@ export default function SelectedProduct({
   changeSelectCount,
   onDeleteProduct,
 }) {
-  const { _id, images, title, price, count } = selectedProduct;
+  const { _id, images, price, count } = selectedProduct;
+  const { language } = useGlobalState('global');
 
   const languageDeterminer = obj => languageWrapper(getLanguage(), obj);
 
@@ -23,19 +25,22 @@ export default function SelectedProduct({
         to={`/products/${_id}`}
         title={`${languageDeterminer(
           LANGUAGE.selectedProduct.titleLink,
-        )} "${title}"`}
+        )} "${titleWrapper(language, selectedProduct)}"`}
         className={s.thumb}
       >
         <img
-          src={images?.length > 0 ? images[0] : defaultImage}
-          alt={title}
+          src={images?.length > 0 ? images[0].url : defaultImage}
+          alt={titleWrapper(language, selectedProduct)}
           className={s.image}
         />
 
         <h3 className={s.title}>
-          {title.length < GLOBAL.titleLength
-            ? title
-            : title.slice(0, GLOBAL.titleLength) + '...'}
+          {titleWrapper(language, selectedProduct).length < GLOBAL.titleLength
+            ? titleWrapper(language, selectedProduct)
+            : titleWrapper(language, selectedProduct).slice(
+                0,
+                GLOBAL.titleLength,
+              ) + '...'}
         </h3>
       </Link>
 
