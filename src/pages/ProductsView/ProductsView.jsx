@@ -162,15 +162,14 @@ export default function ProductsView({ productsByCategoryOrTag, addToCart }) {
   }
 
   function handleNameClick() {
-    const visibleProductsToLowerCase = products.map(product => {
-      const productToLowerCase = { ...product };
-      productToLowerCase.title = {
+    const visibleProductsToLowerCase = products.map(product => ({
+      ...product,
+      title: {
         ua: titleWrapper('UA', product).toLowerCase(),
         ru: titleWrapper('RU', product).toLowerCase(),
         en: titleWrapper('EN', product).toLowerCase(),
-      };
-      return productToLowerCase;
-    });
+      },
+    }));
 
     const queryArr = searchByName
       .toLowerCase()
