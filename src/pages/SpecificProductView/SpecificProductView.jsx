@@ -203,9 +203,9 @@ export default function SpecificProductView({
                     {getCategory(language, categories, product)}
                   </p>
 
-                  {product?.product_details?.[language.toLowerCase()]?.length >
+                  {product?.product_details?.['ua' || 'ru' || 'en']?.length >
                     0 &&
-                    product.product_details[language.toLowerCase()].map(
+                    propertyWrapper(language, product, 'product_details').map(
                       detail => (
                         <p key={detail.attribute_name} className={s.stat}>
                           <span className={s.statName}>
