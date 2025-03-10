@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { useGlobalState } from 'state';
 import { CountForm, Button } from 'components';
 import { getLanguage } from 'functions';
-import { languageWrapper, titleWrapper } from 'middlewares';
+import { languageWrapper, propertyWrapper } from 'middlewares';
 import { GLOBAL, LANGUAGE } from 'constants';
 import defaultImage from 'assets/notFound.png';
 import s from './SelectedProduct.module.css';
@@ -25,19 +25,20 @@ export default function SelectedProduct({
         to={`/products/${_id}`}
         title={`${languageDeterminer(
           LANGUAGE.selectedProduct.titleLink,
-        )} "${titleWrapper(language, selectedProduct)}"`}
+        )} "${propertyWrapper(language, selectedProduct, 'title')}"`}
         className={s.thumb}
       >
         <img
           src={images?.length > 0 ? images[0].url : defaultImage}
-          alt={titleWrapper(language, selectedProduct)}
+          alt={propertyWrapper(language, selectedProduct, 'title')}
           className={s.image}
         />
 
         <h3 className={s.title}>
-          {titleWrapper(language, selectedProduct).length < GLOBAL.titleLength
-            ? titleWrapper(language, selectedProduct)
-            : titleWrapper(language, selectedProduct).slice(
+          {propertyWrapper(language, selectedProduct, 'title').length <
+          GLOBAL.titleLength
+            ? propertyWrapper(language, selectedProduct, 'title')
+            : propertyWrapper(language, selectedProduct, 'title').slice(
                 0,
                 GLOBAL.titleLength,
               ) + '...'}
