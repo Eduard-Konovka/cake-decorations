@@ -126,6 +126,7 @@ export default function App() {
         user,
         cart: cart.map(obj => ({ _id: obj._id, quantity: obj.count })),
         totalCost,
+        type: 'new',
       }).finally(() => {
         changeGlobalState(updateCart, []);
         setSending(false);
