@@ -68,12 +68,6 @@ export const LANGUAGE = {
       rus: 'Товары',
     },
 
-    about: {
-      eng: 'About us',
-      ukr: 'Про нас',
-      rus: 'Про нас',
-    },
-
     contacts: {
       eng: 'Contacts',
       ukr: 'Контакти',
@@ -84,12 +78,6 @@ export const LANGUAGE = {
       eng: 'Delivery and payment',
       ukr: 'Доставка та оплата',
       rus: 'Доставка и оплата',
-    },
-
-    portfolio: {
-      eng: 'Portfolio',
-      ukr: 'Портфоліо',
-      rus: 'Портфолио',
     },
   },
 
@@ -120,12 +108,6 @@ export const LANGUAGE = {
       rus: 'Перейти к списку товаров',
     },
 
-    aboutLink: {
-      eng: 'Go to the page about us',
-      ukr: 'Перейти на сторінку про нас',
-      rus: 'Перейти на страницу о нас',
-    },
-
     contactsLink: {
       eng: 'Go to our contacts page',
       ukr: 'Перейти на сторінку наших контактів',
@@ -136,12 +118,6 @@ export const LANGUAGE = {
       eng: 'Go to the shipping and payment information page',
       ukr: 'Перейти на сторінку інформації про доставку та оплату',
       rus: 'Перейти на страницу информации о доставке и оплате',
-    },
-
-    portfolioLink: {
-      eng: 'Go to our portfolio',
-      ukr: 'Перейти до нашого портфоліо',
-      rus: 'Перейти к нашему портфолио',
     },
 
     cartLink: {

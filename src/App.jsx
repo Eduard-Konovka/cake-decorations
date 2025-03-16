@@ -32,11 +32,11 @@ const SpecificProductView = lazy(() =>
     'pages/SpecificProductView' /* webpackChunkName: "SpecificProductView" */
   ),
 );
-const AboutView = lazy(() =>
-  import('pages/AboutView' /* webpackChunkName: "AboutView" */),
+const ContactsView = lazy(() =>
+  import('pages/ContactsView' /* webpackChunkName: "ContactsView" */),
 );
-const PortfolioView = lazy(() =>
-  import('pages/PortfolioView' /* webpackChunkName: "PortfolioView" */),
+const DeliveryView = lazy(() =>
+  import('pages/DeliveryView' /* webpackChunkName: "DeliveryView" */),
 );
 const CartView = lazy(() =>
   import('pages/CartView' /* webpackChunkName: "CartView" */),
@@ -58,32 +58,37 @@ export default function App() {
   const languageDeterminer = obj => languageWrapper(getLanguage(), obj);
 
   useEffect(() => {
-    const appHeight = window.innerHeight;
+    requestAnimationFrame(() => {
+      const appHeight = window.innerHeight;
 
-    const container = document.getElementById('container');
-    const containerStyle = window.getComputedStyle(container);
-    const containerPaddings =
-      Number.parseInt(containerStyle.getPropertyValue('padding')) * 2;
+      const container = document.getElementById('container');
+      const header = document.getElementById('header');
+      const footer = document.getElementById('footer');
 
-    const header = document.getElementById('header');
-    const headerStyle = window.getComputedStyle(header);
-    const headerHeight =
-      Number.parseInt(headerStyle.getPropertyValue('height')) +
-      Number.parseInt(headerStyle.getPropertyValue('margin-bottom'));
+      if (!container || !header || !footer) return;
 
-    const footer = document.getElementById('footer');
-    const footerStyle = window.getComputedStyle(footer);
-    const footerHeight =
-      Number.parseInt(footerStyle.getPropertyValue('margin-top')) +
-      Number.parseInt(footerStyle.getPropertyValue('height'));
+      // Зчитуємо стилі перед оновленням стану
+      const containerStyle = window.getComputedStyle(container);
+      const containerPaddings =
+        Number.parseInt(containerStyle.getPropertyValue('padding')) * 2;
 
-    // Container, header and footer subtracted from viewport height
-    const computedHeight =
-      appHeight - (containerPaddings + headerHeight + footerHeight);
+      const headerStyle = window.getComputedStyle(header);
+      const headerHeight =
+        Number.parseInt(headerStyle.getPropertyValue('height')) +
+        Number.parseInt(headerStyle.getPropertyValue('margin-bottom'));
 
-    changeGlobalState(updateMainHeight, computedHeight);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+      const footerStyle = window.getComputedStyle(footer);
+      const footerHeight =
+        Number.parseInt(footerStyle.getPropertyValue('margin-top')) +
+        Number.parseInt(footerStyle.getPropertyValue('height'));
+
+      // Container, header and footer subtracted from viewport height
+      const computedHeight =
+        appHeight - (containerPaddings + headerHeight + footerHeight);
+
+      changeGlobalState(updateMainHeight, computedHeight);
+    });
+  }, [changeGlobalState]);
 
   function changeCount(obj) {
     const setCount = item => {
@@ -206,22 +211,10 @@ export default function App() {
           />
 
           <Route
-            path="/about"
-            element={
-              <PrivateRoute redirectTo="/signin">
-                <AboutView text={languageDeterminer(LANGUAGE.titles.about)} />
-              </PrivateRoute>
-            }
-          />
-
-          <Route
             path="/contacts"
             element={
               <PrivateRoute redirectTo="/signin">
-                <AboutView
-                  text={languageDeterminer(LANGUAGE.titles.contacts)}
-                  wave3D
-                />
+                <ContactsView />
               </PrivateRoute>
             }
           />
@@ -230,19 +223,10 @@ export default function App() {
             path="/delivery"
             element={
               <PrivateRoute redirectTo="/signin">
-                <AboutView
+                <DeliveryView
                   text={languageDeterminer(LANGUAGE.titles.delivery)}
                   waveReflection
                 />
-              </PrivateRoute>
-            }
-          />
-
-          <Route
-            path="/portfolio"
-            element={
-              <PrivateRoute redirectTo="/signin">
-                <PortfolioView />
               </PrivateRoute>
             }
           />

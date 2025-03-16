@@ -143,17 +143,6 @@ export default function AppBar({ setDefaultsProducts }) {
             </NavLink>
 
             <NavLink
-              title={languageDeterminer(LANGUAGE.appBar.aboutLink)}
-              to="/about"
-              className={({ isActive }) =>
-                isActive ? s.activeLink : s.inactiveLink
-              }
-              end
-            >
-              {languageDeterminer(LANGUAGE.titles.about)}
-            </NavLink>
-
-            <NavLink
               title={languageDeterminer(LANGUAGE.appBar.contactsLink)}
               to="/contacts"
               className={({ isActive }) =>
@@ -173,17 +162,6 @@ export default function AppBar({ setDefaultsProducts }) {
               end
             >
               {languageDeterminer(LANGUAGE.titles.delivery)}
-            </NavLink>
-
-            <NavLink
-              title={languageDeterminer(LANGUAGE.appBar.portfolioLink)}
-              to="/portfolio"
-              className={({ isActive }) =>
-                isActive ? s.activeLink : s.inactiveLink
-              }
-              end
-            >
-              {languageDeterminer(LANGUAGE.titles.portfolio)}
             </NavLink>
 
             <NavLink
