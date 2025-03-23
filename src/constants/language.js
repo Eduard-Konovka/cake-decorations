@@ -160,9 +160,25 @@ export const LANGUAGE = {
   },
 
   notFoundView: {
-    eng: 'Check the correctness of the entered in the address bar',
-    ukr: 'Перевірте правильність введеного в адресному рядку',
-    rus: 'Проверьте правильность введенной в адресной строке',
+    pageTitle: {
+      eng: 'Check the correctness of the entered in the address bar',
+      ukr: 'Перевірте правильність введеного в адресному рядку',
+      rus: 'Проверьте правильность введенной в адресной строке',
+    },
+
+    redirect: {
+      title: {
+        eng: 'Go to the main page',
+        ukr: 'Перейти на головну сторінку',
+        rus: 'Перейти на главную страницу',
+      },
+
+      text: {
+        eng: 'Main page',
+        ukr: 'Головна сторінка',
+        rus: 'Главная страница',
+      },
+    },
   },
 
   order: {

@@ -137,8 +137,11 @@ export default function SpecificProductView({
   }, [language, product, tagsDictionary, linksDictionary]);
 
   useEffect(() => {
+    if (!product) return;
     const description = document.querySelector('#description');
-    description.innerHTML = propertyWrapper(language, product, 'description');
+    if (description) {
+      description.innerHTML = propertyWrapper(language, product, 'description');
+    }
   }, [language, product]);
 
   const toggleModal = () => {

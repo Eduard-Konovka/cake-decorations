@@ -250,7 +250,7 @@ export default function App() {
             element={
               <PrivateRoute redirectTo="/signin">
                 <NotFoundView
-                  message={languageDeterminer(LANGUAGE.notFoundView)}
+                  message={languageDeterminer(LANGUAGE.notFoundView.pageTitle)}
                 />
               </PrivateRoute>
             }
