@@ -37,7 +37,7 @@ export default function SpecificProductView({
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [product, setProduct] = useState({});
+  const [product, setProduct] = useState(null);
   const [mainImageIdx, setMainImageIdx] = useState(0);
   const [tags, setTags] = useState([]);
   const [links, setLinks] = useState([]);

@@ -1,18 +1,12 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { useGlobalState } from 'state';
+import { auth } from 'db';
 
-// - If the route is private and the user is logged in, render the component
-// - Otherwise redirects to "redirectTo"
-
-export default function PrivateRoute({ children, redirectTo = '/' }) {
-  const { user } = useGlobalState('global');
-
-  return user.name ? children : <Navigate to={redirectTo} />;
+export default function PrivateRoute({ children }) {
+  return auth.currentUser ? children : <Navigate to="/signin" />;
 }
 
 PrivateRoute.propTypes = {
   children: PropTypes.element.isRequired,
-  redirectTo: PropTypes.string,
 };

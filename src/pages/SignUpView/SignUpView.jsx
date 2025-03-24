@@ -13,14 +13,15 @@ import { getLanguage, saveProfileToDatabase } from 'functions';
 import { languageWrapper } from 'middlewares';
 import { GLOBAL, LANGUAGE, LOGIN } from 'constants';
 import avatar from 'assets/avatar.png';
-import s from './SignInView.module.css';
+import s from './SignUpView.module.css';
 
 const initialState = {
+  username: '',
   email: '',
   password: '',
 };
 
-export default function SignInView() {
+export default function SignUpView() {
   const { mainHeight } = useGlobalState('global');
   const changeGlobalState = useChangeGlobalState();
 
@@ -28,6 +29,15 @@ export default function SignInView() {
   const [state, setState] = useState(initialState);
 
   const languageDeterminer = obj => languageWrapper(getLanguage(), obj);
+
+  const handleNameChange = event => {
+    const value = event.target.value.trim();
+
+    setState(prevState => ({
+      ...prevState,
+      username: value,
+    }));
+  };
 
   const handleEmailChange = event => {
     const value = event.target.value.trim();
@@ -84,6 +94,26 @@ export default function SignInView() {
           <img src={avatar} alt="avatar" className={s.avatar} />
 
           <form className={s.form}>
+            <label htmlFor="username" className={s.label}>
+              {languageDeterminer(LANGUAGE.signInView.username)}
+            </label>
+
+            <input
+              id="username"
+              name="username"
+              type="text"
+              title={languageDeterminer(LANGUAGE.signInView.inputTitle)}
+              pattern={languageDeterminer(GLOBAL.signInViewPattern)}
+              placeholder={languageDeterminer(
+                LANGUAGE.signInView.inputPlaceholder,
+              )}
+              autoComplete="given-name family-name"
+              minLength={GLOBAL.signInViewInput.minLength}
+              maxLength={GLOBAL.signInViewInput.maxLength}
+              className={s.input}
+              onChange={handleNameChange}
+            />
+
             <label htmlFor="email" className={s.label}>
               {languageDeterminer(LANGUAGE.signInView.email.label)}
             </label>

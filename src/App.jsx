@@ -163,12 +163,12 @@ export default function App() {
         }
       >
         <Routes>
-          <Route path="/" element={<Navigate to="/signin" />} />
+          <Route path="/" element={<Navigate to="/categories" />} />
 
           <Route
             path="/signin"
             element={
-              <PublicRoute redirectTo="/categories" restricted>
+              <PublicRoute restricted>
                 <SignInView />
               </PublicRoute>
             }
@@ -177,7 +177,7 @@ export default function App() {
           <Route
             path="/categories"
             element={
-              <PrivateRoute redirectTo="/signin">
+              <PrivateRoute>
                 <CategoriesView
                   setProductsByCategory={setProductsByCategoryOrTag}
                 />
@@ -188,7 +188,7 @@ export default function App() {
           <Route
             path="/products"
             element={
-              <PrivateRoute redirectTo="/signin">
+              <PrivateRoute>
                 <ProductsView
                   productsByCategoryOrTag={productsByCategoryOrTag}
                   addToCart={addToCart}
@@ -200,7 +200,7 @@ export default function App() {
           <Route
             path="/products/:id"
             element={
-              <PrivateRoute redirectTo="/signin">
+              <PrivateRoute>
                 <SpecificProductView
                   setProductsByTag={setProductsByCategoryOrTag}
                   changeSelectCount={changeCount}
@@ -213,7 +213,7 @@ export default function App() {
           <Route
             path="/contacts"
             element={
-              <PrivateRoute redirectTo="/signin">
+              <PrivateRoute>
                 <ContactsView />
               </PrivateRoute>
             }
@@ -222,7 +222,7 @@ export default function App() {
           <Route
             path="/delivery"
             element={
-              <PrivateRoute redirectTo="/signin">
+              <PrivateRoute>
                 <DeliveryView
                   text={languageDeterminer(LANGUAGE.titles.delivery)}
                   waveReflection
@@ -234,7 +234,7 @@ export default function App() {
           <Route
             path="/cart"
             element={
-              <PrivateRoute redirectTo="/signin">
+              <PrivateRoute>
                 <CartView
                   sending={sending}
                   changeSelectCount={changeCount}
@@ -248,11 +248,11 @@ export default function App() {
           <Route
             path="*"
             element={
-              <PrivateRoute redirectTo="/signin">
+              <PublicRoute>
                 <NotFoundView
                   message={languageDeterminer(LANGUAGE.notFoundView.pageTitle)}
                 />
-              </PrivateRoute>
+              </PublicRoute>
             }
           />
         </Routes>
