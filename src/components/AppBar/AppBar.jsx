@@ -6,11 +6,13 @@ import {
   useChangeGlobalState,
   updateUser,
   updateLanguage,
+  authSignOutUser,
 } from 'state';
 import { Button } from 'components';
 import { getLanguage } from 'functions';
 import { languageWrapper } from 'middlewares';
 import { LANGUAGE } from 'constants';
+import { auth } from 'db';
 import logo from 'assets/logo.jpg';
 import defaultAvatar from 'assets/defaultAvatar.png';
 import s from './AppBar.module.css';
@@ -20,6 +22,11 @@ export default function AppBar({ setDefaultsProducts }) {
   const changeGlobalState = useChangeGlobalState();
 
   const languageDeterminer = obj => languageWrapper(getLanguage(), obj);
+
+  const signOut = () => {
+    changeGlobalState(authSignOutUser);
+    changeGlobalState(updateUser, {});
+  };
 
   return (
     <header id="header" className={s.header}>
@@ -55,12 +62,12 @@ export default function AppBar({ setDefaultsProducts }) {
         </div>
 
         <div className={s.controlBox}>
-          {user.name ? (
+          {auth.currentUser ? (
             <div className={s.userbar}>
               <Button
                 title={languageDeterminer(LANGUAGE.appBar.signOut.title)}
                 type="button"
-                onClick={() => changeGlobalState(updateUser, {})}
+                onClick={signOut}
               >
                 <Link to="/signin" className={s.btnLink}>
                   {languageDeterminer(LANGUAGE.appBar.signOut.text)}
@@ -116,7 +123,7 @@ export default function AppBar({ setDefaultsProducts }) {
       </div>
 
       <nav className={s.nav}>
-        {user.name && (
+        {auth.currentUser && (
           <>
             <NavLink
               title={languageDeterminer(LANGUAGE.appBar.categoriesLink)}

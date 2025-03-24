@@ -55,12 +55,14 @@ export default function SignInView() {
         `${languageDeterminer(LOGIN.alert.noEmail.title)}: 
         ${languageDeterminer(LOGIN.alert.noEmail.description)}`,
       );
+      setState(initialState);
       setLoading(false);
     } else if (!state.password || state.password === '') {
       toast.error(
         `${languageDeterminer(LOGIN.alert.noPassword.title)}:
         ${languageDeterminer(LOGIN.alert.noPassword.description)}`,
       );
+      setState(initialState);
       setLoading(false);
     } else {
       changeGlobalState(authStateChangeUser);
