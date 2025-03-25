@@ -146,6 +146,12 @@ export default function SignInView() {
                 </p>
               )}
             </Button>
+
+            <Button type="button" typeForm="signin">
+              <Link to="/signup" className={s.btnLink}>
+                {'Зареєструватися'}
+              </Link>
+            </Button>
           </form>
         </section>
       )}

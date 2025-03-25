@@ -44,6 +44,9 @@ const CartView = lazy(() =>
 const SignInView = lazy(() =>
   import('pages/SignInView' /* webpackChunkName: "SignInView" */),
 );
+const SignUpView = lazy(() =>
+  import('pages/SignUpView' /* webpackChunkName: "SignUpView" */),
+);
 const NotFoundView = lazy(() =>
   import('pages/NotFoundView' /* webpackChunkName: "NotFoundView" */),
 );
@@ -175,6 +178,15 @@ export default function App() {
           />
 
           <Route
+            path="/signup"
+            element={
+              <PublicRoute restricted>
+                <SignUpView />
+              </PublicRoute>
+            }
+          />
+
+          <Route
             path="/categories"
             element={
               <PublicRoute>
@@ -239,20 +251,6 @@ export default function App() {
                   onSubmit={submitCart}
                 />
               </PublicRoute>
-            }
-          />
-
-          <Route
-            path="/cart"
-            element={
-              <PrivateRoute>
-                <CartView
-                  sending={sending}
-                  changeSelectCount={changeCount}
-                  onDeleteProduct={removeFromCart}
-                  onSubmit={submitCart}
-                />
-              </PrivateRoute>
             }
           />
 
