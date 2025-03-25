@@ -223,10 +223,7 @@ export default function App() {
             path="/delivery"
             element={
               <PrivateRoute>
-                <DeliveryView
-                  text={languageDeterminer(LANGUAGE.titles.delivery)}
-                  waveReflection
-                />
+                <DeliveryView />
               </PrivateRoute>
             }
           />

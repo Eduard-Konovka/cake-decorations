@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useGlobalState } from 'state';
 import { pageUp } from 'functions';
 import s from './ContactsView.module.css';
@@ -11,13 +12,29 @@ export default function ContactsView() {
   return (
     <main className={s.page} style={{ minHeight: mainHeight }}>
       <div className={s.box}>
-        <p className={s.address}>
+        <p className={s.attributeName}>Адреса:</p>
+        <p className={s.attributeValue}>
           Центральний ринок, магазин № 316, Ізмаїл, Україна
         </p>
-        <div className={s.contacts}>
-          <p className={s.phone}>+380 (50) 131-66-43</p>
-          <p className={s.phone}>+380 (98) 133-20-37</p>
-        </div>
+
+        <p className={s.attributeName}>Телефони:</p>
+        <p className={s.attributeValue}>+380501316643 / +380981332037</p>
+
+        <p className={s.attributeName}>Телеграм:</p>
+        <p className={s.attributeValue}>+380501316643</p>
+
+        <p className={s.attributeName}>Вайбер:</p>
+        <p className={s.attributeValue}>+380501316643</p>
+
+        <p className={s.attributeName}>Инстаграм:</p>
+        <p className={s.attributeValue}>
+          <Link
+            to="https://www.instagram.com/tortoviprikrasi_izmail?igsh=MTZoc2d5ZnI3eWZvMw=="
+            className={s.link}
+          >
+            Тетяна Чечіна
+          </Link>
+        </p>
       </div>
     </main>
   );

@@ -4,7 +4,10 @@ import { useGlobalState } from 'state';
 import { pageUp } from 'functions';
 import s from './DeliveryView.module.css';
 
-export default function DeliveryView({ text, wave3D, waveReflection }) {
+const text =
+  'Доставляем заказы по Украине перевозчиком Новая почта на отделение, в почтомат или по адресу.\nРаботаем по 100% предоплате.\nПри оплате заказа до 14 часов отправка в тот же день.\nВыходной - понедельник.';
+
+export default function DeliveryView({ wave3D, waveReflection = false }) {
   const { mainHeight } = useGlobalState('global');
 
   const textArray = ['"', ...text.split(''), '"'];
