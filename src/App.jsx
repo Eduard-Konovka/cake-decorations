@@ -177,54 +177,68 @@ export default function App() {
           <Route
             path="/categories"
             element={
-              <PrivateRoute>
+              <PublicRoute>
                 <CategoriesView
                   setProductsByCategory={setProductsByCategoryOrTag}
                 />
-              </PrivateRoute>
+              </PublicRoute>
             }
           />
 
           <Route
             path="/products"
             element={
-              <PrivateRoute>
+              <PublicRoute>
                 <ProductsView
                   productsByCategoryOrTag={productsByCategoryOrTag}
                   addToCart={addToCart}
                 />
-              </PrivateRoute>
+              </PublicRoute>
             }
           />
 
           <Route
             path="/products/:id"
             element={
-              <PrivateRoute>
+              <PublicRoute>
                 <SpecificProductView
                   setProductsByTag={setProductsByCategoryOrTag}
                   changeSelectCount={changeCount}
                   addToCart={addToCart}
                 />
-              </PrivateRoute>
+              </PublicRoute>
             }
           />
 
           <Route
             path="/contacts"
             element={
-              <PrivateRoute>
+              <PublicRoute>
                 <ContactsView />
-              </PrivateRoute>
+              </PublicRoute>
             }
           />
 
           <Route
             path="/delivery"
             element={
-              <PrivateRoute>
+              <PublicRoute>
                 <DeliveryView />
-              </PrivateRoute>
+              </PublicRoute>
+            }
+          />
+
+          <Route
+            path="/cart"
+            element={
+              <PublicRoute>
+                <CartView
+                  sending={sending}
+                  changeSelectCount={changeCount}
+                  onDeleteProduct={removeFromCart}
+                  onSubmit={submitCart}
+                />
+              </PublicRoute>
             }
           />
 
