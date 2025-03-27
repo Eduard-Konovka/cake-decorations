@@ -1,4 +1,4 @@
-export { global } from './state';
+export { initialUser, global } from './state';
 export {
   updateLanguage,
   updateMainHeight,

@@ -8,6 +8,13 @@ export const GLOBAL = {
       pattern: `^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$`,
     },
 
+    phone: {
+      minLength: 7,
+      maxLength: 15,
+      // eslint-disable-next-line no-useless-escape
+      pattern: `\+?[0-9\s\-\(\)]{7,15}`,
+    },
+
     email: {
       // eslint-disable-next-line no-useless-escape
       pattern: `^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$`,

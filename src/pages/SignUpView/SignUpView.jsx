@@ -2,40 +2,78 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import {
+  initialUser,
   useGlobalState,
   useChangeGlobalState,
-  updateUser,
-  authSignInUser,
-  authStateChangeUser,
+  authSignUpUser,
 } from 'state';
 import { Spinner, Button } from 'components';
-import { getLanguage, saveProfileToDatabase } from 'functions';
+import { getLanguage } from 'functions';
 import { languageWrapper } from 'middlewares';
-import { GLOBAL, LANGUAGE, LOGIN } from 'constants';
+import { GLOBAL, LANGUAGE } from 'constants';
 import avatar from 'assets/avatar.png';
 import s from './SignUpView.module.css';
-
-const initialState = {
-  username: '',
-  email: '',
-  password: '',
-};
 
 export default function SignUpView() {
   const { mainHeight } = useGlobalState('global');
   const changeGlobalState = useChangeGlobalState();
 
   const [loading, setLoading] = useState(false);
-  const [state, setState] = useState(initialState);
+  const [state, setState] = useState(initialUser);
 
   const languageDeterminer = obj => languageWrapper(getLanguage(), obj);
 
-  const handleNameChange = event => {
+  const handleFirstNameChange = event => {
     const value = event.target.value.trim();
 
     setState(prevState => ({
       ...prevState,
-      username: value,
+      firstName: value,
+    }));
+  };
+
+  const handleLastNameChange = event => {
+    const value = event.target.value.trim();
+
+    setState(prevState => ({
+      ...prevState,
+      lastName: value,
+    }));
+  };
+
+  const handlePhoneChange = event => {
+    const value = event.target.value.trim();
+
+    setState(prevState => ({
+      ...prevState,
+      phone: value,
+    }));
+  };
+
+  const handleLocalityChange = event => {
+    const value = event.target.value.trim();
+
+    setState(prevState => ({
+      ...prevState,
+      locality: value,
+    }));
+  };
+
+  const handleAddressChange = event => {
+    const value = event.target.value.trim();
+
+    setState(prevState => ({
+      ...prevState,
+      address: value,
+    }));
+  };
+
+  const handlePostDeliveryChange = event => {
+    const value = event.target.value.trim();
+
+    setState(prevState => ({
+      ...prevState,
+      delivery: value,
     }));
   };
 
@@ -60,29 +98,36 @@ export default function SignUpView() {
   const handleLoginPress = () => {
     setLoading(true);
 
-    if (!state.email || state.email === '') {
-      toast.error(
-        `${languageDeterminer(LOGIN.alert.noEmail.title)}: 
-        ${languageDeterminer(LOGIN.alert.noEmail.description)}`,
-      );
-      setState(initialState);
+    if (!state.firstName || state.firstName === '') {
+      toast.error(languageDeterminer(LANGUAGE.alert.noFirstName));
+      setLoading(false);
+    } else if (!state.lastName || state.lastName === '') {
+      toast.error(languageDeterminer(LANGUAGE.alert.noLastName));
+      setLoading(false);
+    } else if (!state.phone || state.phone === '') {
+      toast.error(languageDeterminer(LANGUAGE.alert.noPhone));
+      setLoading(false);
+    } else if (!state.locality || state.locality === '') {
+      toast.error(languageDeterminer(LANGUAGE.alert.noLocality));
+      setLoading(false);
+    } else if (!state.address || state.address === '') {
+      toast.error(languageDeterminer(LANGUAGE.alert.noAddress));
+      setLoading(false);
+    } else if (!state.delivery || state.delivery === '') {
+      toast.error(languageDeterminer(LANGUAGE.alert.noDelivery));
+      setLoading(false);
+    } else if (!state.email || state.email === '') {
+      toast.error(languageDeterminer(LANGUAGE.alert.noEmail));
       setLoading(false);
     } else if (!state.password || state.password === '') {
-      toast.error(
-        `${languageDeterminer(LOGIN.alert.noPassword.title)}:
-        ${languageDeterminer(LOGIN.alert.noPassword.description)}`,
-      );
-      setState(initialState);
+      toast.error(languageDeterminer(LANGUAGE.alert.noPassword));
       setLoading(false);
     } else {
-      changeGlobalState(authStateChangeUser);
-      changeGlobalState(updateUser, { name: state.email });
-      changeGlobalState(authSignInUser, {
+      changeGlobalState(authSignUpUser, {
         user: state,
-        errorTitle: languageDeterminer(LOGIN.alert.authSignInUser),
+        errorTitle: languageDeterminer(LANGUAGE.alert.authSignInUser),
       });
-      saveProfileToDatabase();
-      setState(initialState);
+      setState(initialUser);
       setLoading(false);
     }
   };
@@ -96,24 +141,136 @@ export default function SignUpView() {
           <img src={avatar} alt="avatar" className={s.avatar} />
 
           <form className={s.form}>
-            <label htmlFor="username" className={s.label}>
-              {languageDeterminer(LANGUAGE.authorizationViews.username)}
+            <label htmlFor="firstName" className={s.label}>
+              {languageDeterminer(LANGUAGE.authorizationViews.firstName.label)}
             </label>
 
             <input
-              id="username"
-              name="username"
+              id="firstName"
+              name="firstName"
               type="text"
-              title={languageDeterminer(LANGUAGE.authorizationViews.inputTitle)}
-              pattern={languageDeterminer(GLOBAL.signInViewPattern)}
-              placeholder={languageDeterminer(
-                LANGUAGE.authorizationViews.inputPlaceholder,
+              title={languageDeterminer(
+                LANGUAGE.authorizationViews.firstName.title,
               )}
-              autoComplete="given-name family-name"
-              minLength={GLOBAL.signInViewInput.minLength}
-              maxLength={GLOBAL.signInViewInput.maxLength}
+              pattern={languageDeterminer(GLOBAL.inputs.common.pattern)}
+              placeholder={languageDeterminer(
+                LANGUAGE.authorizationViews.firstName.placeholder,
+              )}
+              autoComplete="given-name"
+              minLength={GLOBAL.inputs.common.minLength}
+              maxLength={GLOBAL.inputs.common.maxLength}
               className={s.input}
-              onChange={handleNameChange}
+              onChange={handleFirstNameChange}
+            />
+
+            <label htmlFor="lastName" className={s.label}>
+              {languageDeterminer(LANGUAGE.authorizationViews.lastName.label)}
+            </label>
+
+            <input
+              id="lastName"
+              name="lastName"
+              type="text"
+              title={languageDeterminer(
+                LANGUAGE.authorizationViews.lastName.title,
+              )}
+              pattern={languageDeterminer(GLOBAL.inputs.common.pattern)}
+              placeholder={languageDeterminer(
+                LANGUAGE.authorizationViews.lastName.placeholder,
+              )}
+              autoComplete="family-name"
+              minLength={GLOBAL.inputs.common.minLength}
+              maxLength={GLOBAL.inputs.common.maxLength}
+              className={s.input}
+              onChange={handleLastNameChange}
+            />
+
+            <label htmlFor="phone" className={s.label}>
+              {languageDeterminer(LANGUAGE.authorizationViews.phone.label)}
+            </label>
+
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              title={languageDeterminer(
+                LANGUAGE.authorizationViews.phone.title,
+              )}
+              pattern={languageDeterminer(GLOBAL.inputs.phone.pattern)}
+              placeholder={languageDeterminer(
+                LANGUAGE.authorizationViews.phone.placeholder,
+              )}
+              autoComplete="tel"
+              minLength={GLOBAL.inputs.phone.minLength}
+              maxLength={GLOBAL.inputs.phone.maxLength}
+              className={s.input}
+              onChange={handlePhoneChange}
+            />
+
+            <label htmlFor="locality" className={s.label}>
+              {languageDeterminer(LANGUAGE.authorizationViews.locality.label)}
+            </label>
+
+            <input
+              id="locality"
+              name="locality"
+              type="text"
+              title={languageDeterminer(
+                LANGUAGE.authorizationViews.locality.title,
+              )}
+              pattern={languageDeterminer(GLOBAL.inputs.common.pattern)}
+              placeholder={languageDeterminer(
+                LANGUAGE.authorizationViews.locality.placeholder,
+              )}
+              autoComplete="family-name"
+              minLength={GLOBAL.inputs.common.minLength}
+              maxLength={GLOBAL.inputs.common.maxLength}
+              className={s.input}
+              onChange={handleLocalityChange}
+            />
+
+            <label htmlFor="address" className={s.label}>
+              {languageDeterminer(LANGUAGE.authorizationViews.address.label)}
+            </label>
+
+            <input
+              id="address"
+              name="address"
+              type="text"
+              title={languageDeterminer(
+                LANGUAGE.authorizationViews.address.title,
+              )}
+              pattern={languageDeterminer(GLOBAL.inputs.common.pattern)}
+              placeholder={languageDeterminer(
+                LANGUAGE.authorizationViews.address.placeholder,
+              )}
+              autoComplete="family-name"
+              minLength={GLOBAL.inputs.common.minLength}
+              maxLength={GLOBAL.inputs.common.maxLength}
+              className={s.input}
+              onChange={handleAddressChange}
+            />
+
+            <label htmlFor="delivery" className={s.label}>
+              {languageDeterminer(LANGUAGE.authorizationViews.delivery.label)}
+            </label>
+
+            <input
+              id="delivery"
+              name="delivery"
+              type="text"
+              title={languageDeterminer(
+                LANGUAGE.authorizationViews.delivery.title,
+              )}
+              pattern={languageDeterminer(GLOBAL.inputs.common.pattern)}
+              placeholder={languageDeterminer(
+                LANGUAGE.authorizationViews.delivery.placeholder,
+              )}
+              autoComplete="family-name"
+              minLength={GLOBAL.inputs.common.minLength}
+              maxLength={GLOBAL.inputs.common.maxLength}
+              className={s.input}
+              onChange={handlePostDeliveryChange}
             />
 
             <label htmlFor="email" className={s.label}>
@@ -193,14 +350,14 @@ export default function SignUpView() {
 
             <Button
               title={languageDeterminer(
-                LANGUAGE.authorizationViews.signUpButton.title,
+                LANGUAGE.authorizationViews.signInButton.title,
               )}
               type="button"
               typeForm="signin"
             >
-              <Link to="/signup" className={s.btnLink}>
+              <Link to="/signin" className={s.btnLink}>
                 {languageDeterminer(
-                  LANGUAGE.authorizationViews.signUpButton.text,
+                  LANGUAGE.authorizationViews.signInButton.text,
                 )}
               </Link>
             </Button>

@@ -1,5 +1,6 @@
 export { useGlobalState, useChangeGlobalState } from './useGlobalState';
 export {
+  initialUser,
   updateLanguage,
   updateMainHeight,
   updateUser,
@@ -9,5 +10,10 @@ export {
   updateLinksDictionary,
   updateCart,
 } from './global';
-export { authSignInUser, authSignOutUser, authStateChangeUser } from './auth';
+export {
+  authSignUpUser,
+  authSignInUser,
+  authSignOutUser,
+  authStateChange,
+} from './auth';
 export { default as GlobalState } from './GlobalState.jsx';

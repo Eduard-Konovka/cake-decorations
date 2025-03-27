@@ -1,4 +1,11 @@
 export const auth = {
-  name: null,
   userId: null,
+  firstName: '',
+  lastName: '',
+  fullName: '',
+  phone: '',
+  locality: '',
+  address: '',
+  delivery: '',
+  email: '',
 };

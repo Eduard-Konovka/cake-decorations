@@ -6,12 +6,12 @@ import {
   useChangeGlobalState,
   updateUser,
   authSignInUser,
-  authStateChangeUser,
+  authStateChange,
 } from 'state';
 import { Spinner, Button } from 'components';
-import { getLanguage, saveProfileToDatabase } from 'functions';
+import { getLanguage } from 'functions';
 import { languageWrapper } from 'middlewares';
-import { GLOBAL, LANGUAGE, LOGIN } from 'constants';
+import { GLOBAL, LANGUAGE } from 'constants';
 import avatar from 'assets/avatar.png';
 import s from './SignInView.module.css';
 
@@ -51,27 +51,20 @@ export default function SignInView() {
     setLoading(true);
 
     if (!state.email || state.email === '') {
-      toast.error(
-        `${languageDeterminer(LOGIN.alert.noEmail.title)}: 
-        ${languageDeterminer(LOGIN.alert.noEmail.description)}`,
-      );
+      toast.error(languageDeterminer(LANGUAGE.alert.noEmail));
       setState(initialState);
       setLoading(false);
     } else if (!state.password || state.password === '') {
-      toast.error(
-        `${languageDeterminer(LOGIN.alert.noPassword.title)}:
-        ${languageDeterminer(LOGIN.alert.noPassword.description)}`,
-      );
+      toast.error(languageDeterminer(LANGUAGE.alert.noPassword));
       setState(initialState);
       setLoading(false);
     } else {
-      changeGlobalState(authStateChangeUser);
-      changeGlobalState(updateUser, { name: state.email });
       changeGlobalState(authSignInUser, {
         user: state,
-        errorTitle: languageDeterminer(LOGIN.alert.authSignInUser),
+        errorTitle: languageDeterminer(LANGUAGE.alert.authSignInUser),
       });
-      saveProfileToDatabase();
+      changeGlobalState(authStateChange);
+      changeGlobalState(updateUser, state); // FIXME: витягнути з сервера state
       setState(initialState);
       setLoading(false);
     }

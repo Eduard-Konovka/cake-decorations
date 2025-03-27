@@ -1,6 +1,7 @@
 export { auth } from './state';
 export {
+  authSignUpUser,
   authSignInUser,
   authSignOutUser,
-  authStateChangeUser,
+  authStateChange,
 } from './operations';
