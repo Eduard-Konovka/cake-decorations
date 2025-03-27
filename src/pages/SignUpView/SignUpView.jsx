@@ -97,17 +97,17 @@ export default function SignUpView() {
 
           <form className={s.form}>
             <label htmlFor="username" className={s.label}>
-              {languageDeterminer(LANGUAGE.signInView.username)}
+              {languageDeterminer(LANGUAGE.authorizationViews.username)}
             </label>
 
             <input
               id="username"
               name="username"
               type="text"
-              title={languageDeterminer(LANGUAGE.signInView.inputTitle)}
+              title={languageDeterminer(LANGUAGE.authorizationViews.inputTitle)}
               pattern={languageDeterminer(GLOBAL.signInViewPattern)}
               placeholder={languageDeterminer(
-                LANGUAGE.signInView.inputPlaceholder,
+                LANGUAGE.authorizationViews.inputPlaceholder,
               )}
               autoComplete="given-name family-name"
               minLength={GLOBAL.signInViewInput.minLength}
@@ -117,17 +117,19 @@ export default function SignUpView() {
             />
 
             <label htmlFor="email" className={s.label}>
-              {languageDeterminer(LANGUAGE.signInView.email.label)}
+              {languageDeterminer(LANGUAGE.authorizationViews.email.label)}
             </label>
 
             <input
               id="email"
               name="email"
               type="email"
-              title={languageDeterminer(LANGUAGE.signInView.email.title)}
+              title={languageDeterminer(
+                LANGUAGE.authorizationViews.email.title,
+              )}
               pattern={languageDeterminer(GLOBAL.inputs.email.pattern)}
               placeholder={languageDeterminer(
-                LANGUAGE.signInView.email.placeholder,
+                LANGUAGE.authorizationViews.email.placeholder,
               )}
               autoComplete="email"
               className={s.input}
@@ -135,17 +137,19 @@ export default function SignUpView() {
             />
 
             <label htmlFor="password" className={s.label}>
-              {languageDeterminer(LANGUAGE.signInView.password.label)}
+              {languageDeterminer(LANGUAGE.authorizationViews.password.label)}
             </label>
 
             <input
               id="password"
               name="password"
               type="password"
-              title={languageDeterminer(LANGUAGE.signInView.password.title)}
+              title={languageDeterminer(
+                LANGUAGE.authorizationViews.password.title,
+              )}
               pattern={languageDeterminer(GLOBAL.inputs.password.pattern)}
               placeholder={languageDeterminer(
-                LANGUAGE.signInView.password.placeholder,
+                LANGUAGE.authorizationViews.password.placeholder,
               )}
               autoComplete="current-password"
               minLength={GLOBAL.inputs.password.minLength}
@@ -155,7 +159,9 @@ export default function SignUpView() {
             />
 
             <Button
-              title={languageDeterminer(LANGUAGE.signInView.button.title)}
+              title={languageDeterminer(
+                LANGUAGE.authorizationViews.signUpButton.title,
+              )}
               type="button"
               typeForm="signin"
               disabled={
@@ -168,13 +174,35 @@ export default function SignUpView() {
               state.password.length >= GLOBAL.inputs.password.minLength &&
               state.password.length <= GLOBAL.inputs.password.maxLength ? (
                 <Link to="/categories" className={s.btnLink}>
-                  {languageDeterminer(LANGUAGE.signInView.button.text)}
+                  {languageDeterminer(
+                    LANGUAGE.authorizationViews.signUpButton.text,
+                  )}
                 </Link>
               ) : (
                 <p className={s.btnLink}>
-                  {languageDeterminer(LANGUAGE.signInView.button.text)}
+                  {languageDeterminer(
+                    LANGUAGE.authorizationViews.signUpButton.text,
+                  )}
                 </p>
               )}
+            </Button>
+
+            <p className={s.separator}>
+              {languageDeterminer(LANGUAGE.authorizationViews.separator)}
+            </p>
+
+            <Button
+              title={languageDeterminer(
+                LANGUAGE.authorizationViews.signUpButton.title,
+              )}
+              type="button"
+              typeForm="signin"
+            >
+              <Link to="/signup" className={s.btnLink}>
+                {languageDeterminer(
+                  LANGUAGE.authorizationViews.signUpButton.text,
+                )}
+              </Link>
             </Button>
           </form>
         </section>

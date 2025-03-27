@@ -329,7 +329,7 @@ export const LANGUAGE = {
     },
   },
 
-  signInView: {
+  authorizationViews: {
     email: {
       label: {
         eng: 'Email:',
@@ -370,7 +370,13 @@ export const LANGUAGE = {
       },
     },
 
-    button: {
+    separator: {
+      eng: 'or',
+      ukr: 'або',
+      rus: 'или',
+    },
+
+    signInButton: {
       title: {
         eng: 'Sign in to your account',
         ukr: 'Увійдіть у свій обліковий запис',
@@ -381,6 +387,20 @@ export const LANGUAGE = {
         eng: 'Sign in',
         ukr: 'Увійти',
         rus: 'Войти',
+      },
+    },
+
+    signUpButton: {
+      title: {
+        eng: 'Register your account',
+        ukr: 'Зареєструйте свій обліковий запис',
+        rus: 'Зарегистрируйте свой аккаунт',
+      },
+
+      text: {
+        eng: 'Sign up',
+        ukr: 'Зареєструватися',
+        rus: 'Зарегистрироваться',
       },
     },
   },

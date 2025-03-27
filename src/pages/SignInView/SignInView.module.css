@@ -108,6 +108,10 @@
   }
 }
 
+.separator {
+  margin: 0;
+}
+
 .btnLink {
   margin: 0;
   text-decoration: none;

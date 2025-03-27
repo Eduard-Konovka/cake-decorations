@@ -87,17 +87,19 @@ export default function SignInView() {
 
           <form className={s.form}>
             <label htmlFor="email" className={s.label}>
-              {languageDeterminer(LANGUAGE.signInView.email.label)}
+              {languageDeterminer(LANGUAGE.authorizationViews.email.label)}
             </label>
 
             <input
               id="email"
               name="email"
               type="email"
-              title={languageDeterminer(LANGUAGE.signInView.email.title)}
+              title={languageDeterminer(
+                LANGUAGE.authorizationViews.email.title,
+              )}
               pattern={languageDeterminer(GLOBAL.inputs.email.pattern)}
               placeholder={languageDeterminer(
-                LANGUAGE.signInView.email.placeholder,
+                LANGUAGE.authorizationViews.email.placeholder,
               )}
               autoComplete="email"
               className={s.input}
@@ -105,17 +107,19 @@ export default function SignInView() {
             />
 
             <label htmlFor="password" className={s.label}>
-              {languageDeterminer(LANGUAGE.signInView.password.label)}
+              {languageDeterminer(LANGUAGE.authorizationViews.password.label)}
             </label>
 
             <input
               id="password"
               name="password"
               type="password"
-              title={languageDeterminer(LANGUAGE.signInView.password.title)}
+              title={languageDeterminer(
+                LANGUAGE.authorizationViews.password.title,
+              )}
               pattern={languageDeterminer(GLOBAL.inputs.password.pattern)}
               placeholder={languageDeterminer(
-                LANGUAGE.signInView.password.placeholder,
+                LANGUAGE.authorizationViews.password.placeholder,
               )}
               autoComplete="current-password"
               minLength={GLOBAL.inputs.password.minLength}
@@ -125,7 +129,9 @@ export default function SignInView() {
             />
 
             <Button
-              title={languageDeterminer(LANGUAGE.signInView.button.title)}
+              title={languageDeterminer(
+                LANGUAGE.authorizationViews.signInButton.title,
+              )}
               type="button"
               typeForm="signin"
               disabled={
@@ -138,18 +144,34 @@ export default function SignInView() {
               state.password.length >= GLOBAL.inputs.password.minLength &&
               state.password.length <= GLOBAL.inputs.password.maxLength ? (
                 <Link to="/categories" className={s.btnLink}>
-                  {languageDeterminer(LANGUAGE.signInView.button.text)}
+                  {languageDeterminer(
+                    LANGUAGE.authorizationViews.signInButton.text,
+                  )}
                 </Link>
               ) : (
                 <p className={s.btnLink}>
-                  {languageDeterminer(LANGUAGE.signInView.button.text)}
+                  {languageDeterminer(
+                    LANGUAGE.authorizationViews.signInButton.text,
+                  )}
                 </p>
               )}
             </Button>
 
-            <Button type="button" typeForm="signin">
+            <p className={s.separator}>
+              {languageDeterminer(LANGUAGE.authorizationViews.separator)}
+            </p>
+
+            <Button
+              title={languageDeterminer(
+                LANGUAGE.authorizationViews.signUpButton.title,
+              )}
+              type="button"
+              typeForm="signin"
+            >
               <Link to="/signup" className={s.btnLink}>
-                {'Зареєструватися'}
+                {languageDeterminer(
+                  LANGUAGE.authorizationViews.signUpButton.text,
+                )}
               </Link>
             </Button>
           </form>
