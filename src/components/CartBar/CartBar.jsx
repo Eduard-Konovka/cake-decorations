@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { useGlobalState } from 'state';
 import { CartList, Button } from 'components';
 import { getLanguage } from 'functions';
 import { languageWrapper } from 'middlewares';
+import { auth } from 'db';
 import { LANGUAGE } from 'constants';
 import s from './CartBar.module.css';
 
@@ -12,6 +14,7 @@ export default function CartBar({
   onDeleteProduct,
   onSubmit,
 }) {
+  const navigate = useNavigate();
   const { cart } = useGlobalState('global');
 
   const [totalCost, setTotalCost] = useState(0);
@@ -23,6 +26,14 @@ export default function CartBar({
       cart.reduce((acc, obj) => acc + obj.count * obj.price, 0).toFixed(2),
     );
   }, [cart]);
+
+  const completePurchase = () => {
+    if (auth.currentUser) {
+      onSubmit(Number(totalCost));
+    } else {
+      navigate('/signin');
+    }
+  };
 
   return (
     <div className={s.cartbar}>
@@ -41,7 +52,7 @@ export default function CartBar({
         <Button
           title={languageDeterminer(LANGUAGE.cartBar.buttonTitle)}
           type="button"
-          onClick={() => onSubmit(Number(totalCost))}
+          onClick={completePurchase}
         >
           {languageDeterminer(LANGUAGE.cartBar.buttonText)}
         </Button>

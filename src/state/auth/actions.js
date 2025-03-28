@@ -1,7 +1,9 @@
 const actions = {
   updateUserProfile: (state, payload) => {
+    localStorage.setItem('user', JSON.stringify(payload));
+
     const updatedState = { ...state };
-    updatedState.auth = payload;
+    updatedState.auth.user = payload;
     return updatedState;
   },
 };

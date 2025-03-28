@@ -505,7 +505,7 @@ export const LANGUAGE = {
     alert: {
       noFirstName: {
         eng: 'Please fill in the name field',
-        ukr: 'ББудь ласка, заповніть поле імені',
+        ukr: 'Будь ласка, заповніть поле імені',
         rus: 'Пожалуйста, заполните поле имени',
       },
 

@@ -7,7 +7,8 @@ import {
 } from 'firebase/auth';
 import { auth } from 'db';
 import { updateUserProfile } from './actions';
-import { saveProfileToDatabase } from 'functions';
+import { saveProfileToDatabase, getProfileFromDatabase } from 'functions';
+import { initialUser } from 'state';
 import { toast } from 'react-toastify';
 
 export const authSignUpUser = async (
@@ -15,34 +16,45 @@ export const authSignUpUser = async (
   { user, errorTitle },
   changeGlobalState,
 ) => {
-  const { fullName, phone, email, password } = user;
+  const { firstName, lastName, email, password } = user;
+  const fullName = `${firstName} ${lastName}`;
 
   try {
     await createUserWithEmailAndPassword(auth, email, password);
 
     await updateProfile(auth.currentUser, {
       displayName: fullName,
-      photoURL: phone,
     });
 
-    const authUpdateProfile = {
+    const newUser = {
       ...user,
-      userId: auth.currentUser.uid,
+      fullName,
+      uid: auth.currentUser.uid,
     };
 
-    saveProfileToDatabase(user);
+    delete newUser.password;
 
-    return changeGlobalState(updateUserProfile, authUpdateProfile);
+    saveProfileToDatabase(newUser);
+
+    return changeGlobalState(updateUserProfile, newUser);
   } catch (error) {
     toast.error(`${errorTitle}: ${error.message}`);
   }
 };
 
-export const authSignInUser = async (state, { user, errorTitle }) => {
+export const authSignInUser = async (
+  state,
+  { user, errorTitle },
+  changeGlobalState,
+) => {
   const { email, password } = user;
 
   try {
     await signInWithEmailAndPassword(auth, email, password);
+
+    const newUser = await getProfileFromDatabase(auth.currentUser.uid);
+
+    return changeGlobalState(updateUserProfile, newUser);
   } catch (error) {
     toast.error(`${errorTitle}: ${error.message}`);
   }
@@ -51,23 +63,18 @@ export const authSignInUser = async (state, { user, errorTitle }) => {
 export const authSignOutUser = async (state, payload, changeGlobalState) => {
   await signOut(auth);
 
-  const authInitialProfile = {
-    userId: null,
-    fullName: null,
-  };
-
-  changeGlobalState(updateUserProfile, authInitialProfile);
+  return changeGlobalState(updateUserProfile, initialUser);
 };
 
 export const authStateChange = async (state, payload, changeGlobalState) => {
-  await onAuthStateChanged(auth, authUser => {
-    if (authUser) {
-      const authUpdateProfile = {
-        userId: authUser.uid,
-        fullName: authUser.displayName,
+  await onAuthStateChanged(auth, user => {
+    if (user) {
+      const newUser = {
+        uid: user.uid,
+        fullName: user.displayName,
       };
 
-      changeGlobalState(updateUserProfile, authUpdateProfile);
+      changeGlobalState(updateUserProfile, newUser);
     }
   });
 };

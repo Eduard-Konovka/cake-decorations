@@ -1,20 +1,8 @@
 import { doc, setDoc } from 'firebase/firestore';
-import { auth, db } from 'db';
+import { db } from 'db';
 
 export async function saveProfileToDatabase(user) {
-  if (auth.currentUser) {
-    const { uid, displayName, email } = await auth.currentUser;
+  const userRef = doc(db, 'users', user.uid);
 
-    const usersDevisesRef = doc(db, 'users', uid);
-
-    await setDoc(
-      usersDevisesRef,
-      {
-        ...user,
-        fullName: displayName,
-        email,
-      },
-      { merge: true },
-    );
-  }
+  await setDoc(userRef, user, { merge: true });
 }

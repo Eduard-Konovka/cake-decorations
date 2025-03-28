@@ -1,9 +1,7 @@
 export { useGlobalState, useChangeGlobalState } from './useGlobalState';
 export {
-  initialUser,
   updateLanguage,
   updateMainHeight,
-  updateUser,
   updateCategories,
   updateProducts,
   updateTagsDictionary,
@@ -11,6 +9,7 @@ export {
   updateCart,
 } from './global';
 export {
+  initialUser,
   authSignUpUser,
   authSignInUser,
   authSignOutUser,

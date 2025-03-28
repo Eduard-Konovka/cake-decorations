@@ -1,13 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import {
-  useGlobalState,
-  useChangeGlobalState,
-  updateUser,
-  authSignInUser,
-  authStateChange,
-} from 'state';
+import { useGlobalState, useChangeGlobalState, authSignInUser } from 'state';
 import { Spinner, Button } from 'components';
 import { getLanguage } from 'functions';
 import { languageWrapper } from 'middlewares';
@@ -51,20 +45,24 @@ export default function SignInView() {
     setLoading(true);
 
     if (!state.email || state.email === '') {
-      toast.error(languageDeterminer(LANGUAGE.alert.noEmail));
+      toast.error(
+        languageDeterminer(LANGUAGE.authorizationViews.alert.noEmail),
+      );
       setState(initialState);
       setLoading(false);
     } else if (!state.password || state.password === '') {
-      toast.error(languageDeterminer(LANGUAGE.alert.noPassword));
+      toast.error(
+        languageDeterminer(LANGUAGE.authorizationViews.alert.noPassword),
+      );
       setState(initialState);
       setLoading(false);
     } else {
       changeGlobalState(authSignInUser, {
         user: state,
-        errorTitle: languageDeterminer(LANGUAGE.alert.authSignInUser),
+        errorTitle: languageDeterminer(
+          LANGUAGE.authorizationViews.alert.authSignInUser,
+        ),
       });
-      changeGlobalState(authStateChange);
-      changeGlobalState(updateUser, state); // FIXME: витягнути з сервера state
       setState(initialState);
       setLoading(false);
     }

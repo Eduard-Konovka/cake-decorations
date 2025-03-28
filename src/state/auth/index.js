@@ -1,4 +1,4 @@
-export { auth } from './state';
+export { initialUser, auth } from './state';
 export {
   authSignUpUser,
   authSignInUser,

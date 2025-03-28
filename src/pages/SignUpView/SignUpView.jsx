@@ -17,9 +17,10 @@ import s from './SignUpView.module.css';
 export default function SignUpView() {
   const { mainHeight } = useGlobalState('global');
   const changeGlobalState = useChangeGlobalState();
+  const initialState = { ...initialUser, password: '' };
 
   const [loading, setLoading] = useState(false);
-  const [state, setState] = useState(initialUser);
+  const [state, setState] = useState(initialState);
 
   const languageDeterminer = obj => languageWrapper(getLanguage(), obj);
 
@@ -99,35 +100,53 @@ export default function SignUpView() {
     setLoading(true);
 
     if (!state.firstName || state.firstName === '') {
-      toast.error(languageDeterminer(LANGUAGE.alert.noFirstName));
+      toast.error(
+        languageDeterminer(LANGUAGE.authorizationViews.alert.noFirstName),
+      );
       setLoading(false);
     } else if (!state.lastName || state.lastName === '') {
-      toast.error(languageDeterminer(LANGUAGE.alert.noLastName));
+      toast.error(
+        languageDeterminer(LANGUAGE.authorizationViews.alert.noLastName),
+      );
       setLoading(false);
     } else if (!state.phone || state.phone === '') {
-      toast.error(languageDeterminer(LANGUAGE.alert.noPhone));
+      toast.error(
+        languageDeterminer(LANGUAGE.authorizationViews.alert.noPhone),
+      );
       setLoading(false);
     } else if (!state.locality || state.locality === '') {
-      toast.error(languageDeterminer(LANGUAGE.alert.noLocality));
+      toast.error(
+        languageDeterminer(LANGUAGE.authorizationViews.alert.noLocality),
+      );
       setLoading(false);
     } else if (!state.address || state.address === '') {
-      toast.error(languageDeterminer(LANGUAGE.alert.noAddress));
+      toast.error(
+        languageDeterminer(LANGUAGE.authorizationViews.alert.noAddress),
+      );
       setLoading(false);
     } else if (!state.delivery || state.delivery === '') {
-      toast.error(languageDeterminer(LANGUAGE.alert.noDelivery));
+      toast.error(
+        languageDeterminer(LANGUAGE.authorizationViews.alert.noDelivery),
+      );
       setLoading(false);
     } else if (!state.email || state.email === '') {
-      toast.error(languageDeterminer(LANGUAGE.alert.noEmail));
+      toast.error(
+        languageDeterminer(LANGUAGE.authorizationViews.alert.noEmail),
+      );
       setLoading(false);
     } else if (!state.password || state.password === '') {
-      toast.error(languageDeterminer(LANGUAGE.alert.noPassword));
+      toast.error(
+        languageDeterminer(LANGUAGE.authorizationViews.alert.noPassword),
+      );
       setLoading(false);
     } else {
       changeGlobalState(authSignUpUser, {
         user: state,
-        errorTitle: languageDeterminer(LANGUAGE.alert.authSignInUser),
+        errorTitle: languageDeterminer(
+          LANGUAGE.authorizationViews.alert.authSignInUser,
+        ),
       });
-      setState(initialUser);
+      setState(initialState);
       setLoading(false);
     }
   };

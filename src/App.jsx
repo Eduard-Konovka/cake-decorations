@@ -9,13 +9,7 @@ import {
   updateMainHeight,
   updateCart,
 } from 'state';
-import {
-  Container,
-  AppBar,
-  Footer,
-  PublicRoute,
-  PrivateRoute,
-} from 'components';
+import { Container, AppBar, Footer, PublicRoute } from 'components';
 import { getLanguage } from 'functions';
 import { languageWrapper } from 'middlewares';
 import { GLOBAL, LANGUAGE } from 'constants';
@@ -52,7 +46,9 @@ const NotFoundView = lazy(() =>
 );
 
 export default function App() {
-  const { user, cart } = useGlobalState('global');
+  const { user } = useGlobalState('auth');
+  const { cart } = useGlobalState('global');
+
   const changeGlobalState = useChangeGlobalState();
 
   const [productsByCategoryOrTag, setProductsByCategoryOrTag] = useState([]);
@@ -131,7 +127,7 @@ export default function App() {
 
     setTimeout(() => {
       sendСart({
-        user,
+        uid: user.uid,
         cart: cart.map(obj => ({ _id: obj._id, quantity: obj.count })),
         totalCost,
         type: 'new',

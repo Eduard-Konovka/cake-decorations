@@ -1,8 +1,7 @@
-export { initialUser, global } from './state';
+export { global } from './state';
 export {
   updateLanguage,
   updateMainHeight,
-  updateUser,
   updateCategories,
   updateProducts,
   updateTagsDictionary,
