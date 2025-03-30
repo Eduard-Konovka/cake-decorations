@@ -51,12 +51,13 @@ export default function AppBar({ setDefaultsProducts }) {
 
         <div className={s.infoBox}>
           <p className={s.brandInfo}>
-            {'Центральний ринок, магазин № 316, Ізмаїл, Україна'}
+            {languageDeterminer(LANGUAGE.contactsView.address.value)}
           </p>
 
           <div className={s.phoneBox}>
-            <p className={s.brandInfo}>{'+380 (50) 131-66-43'}</p>
-            <p className={s.brandInfo}>{'+380 (98) 133-20-37'}</p>
+            <p className={s.brandInfo}>
+              {languageDeterminer(LANGUAGE.contactsView.phones.value)}
+            </p>
           </div>
         </div>
 

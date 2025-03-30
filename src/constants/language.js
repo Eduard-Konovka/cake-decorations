@@ -781,6 +781,102 @@ export const LANGUAGE = {
     },
   },
 
+  contactsView: {
+    address: {
+      name: { eng: 'Address', ukr: 'Адреса', rus: 'Адрес' },
+
+      value: {
+        eng: 'Central Market, Shop No. 316, Izmail, Ukraine',
+        ukr: 'Центральний ринок, магазин № 316, Ізмаїл, Україна',
+        rus: 'Центральный рынок, магазин № 316, Измаил, Украина',
+      },
+    },
+
+    phones: {
+      name: { eng: 'Phones', ukr: 'Телефони', rus: 'Телефоны' },
+
+      value: {
+        eng: '+380 (50) 131-66-43 / +380 (98) 133-20-37',
+        ukr: '+380 (50) 131-66-43 / +380 (98) 133-20-37',
+        rus: '+380 (50) 131-66-43 / +380 (98) 133-20-37',
+      },
+    },
+
+    telegram: {
+      name: { eng: 'Telegram', ukr: 'Телеграм', rus: 'Телеграм' },
+
+      value: {
+        eng: '+380501316643',
+        ukr: '+380501316643',
+        rus: '+380501316643',
+      },
+    },
+
+    viber: {
+      name: { eng: 'Viber', ukr: 'Вайбер', rus: 'Вайбер' },
+
+      value: {
+        eng: '+380501316643',
+        ukr: '+380501316643',
+        rus: '+380501316643',
+      },
+    },
+
+    instagram: {
+      name: { eng: 'Instagram', ukr: 'Инстаграм', rus: 'Инстаграм' },
+
+      value: {
+        eng: '@tortoviprikrasi_izmail',
+        ukr: '@tortoviprikrasi_izmail',
+        rus: '@tortoviprikrasi_izmail',
+      },
+    },
+  },
+
+  deliveryView: {
+    text1: {
+      eng: 'We deliver orders across Ukraine by the carrier "Nova Poshta" to the branch, post box or to the address',
+      ukr: 'Доставляємо замовлення по Україні перевізником "Нова пошта" на відділення, поштомат або за адресою',
+      rus: 'Доставляем заказы по Украине перевозчиком "Новая почта" на отделение, почтомат или по адресу',
+    },
+
+    text2: {
+      eng: 'We work on 100% prepayment',
+      ukr: 'Працюємо по 100% передоплаті',
+      rus: 'Работаем по 100% предоплате',
+    },
+
+    text3: {
+      eng: 'When paying for the order before 2:00 PM – shipment on the same day',
+      ukr: 'При оплаті замовлення до 14:00 – відправлення того ж дня',
+      rus: 'При оплате заказа до 14:00 – отправка в тот же день',
+    },
+
+    text4: {
+      eng: 'Day off – Monday',
+      ukr: 'Вихідний – понеділок',
+      rus: 'Выходной - понедельник',
+    },
+
+    text5: {
+      eng: 'We are located in the city of Izmail (Odesa region)',
+      ukr: 'Ми знаходимося в місті Ізмаїл (Одеська область)',
+      rus: 'Мы находимся в городе Измаил (Одесская область)',
+    },
+
+    text6: {
+      eng: 'Cake Decoration Shop "Things for the Oven" (No. 316)',
+      ukr: 'Магазин тортових прикрас "Речі для печі" (№ 316)',
+      rus: 'Магазин тортовых украшений "Вещи для печи" (№ 316)',
+    },
+
+    text7: {
+      eng: 'Central Market (main entrance, near the "TikTak" store and "Currency Exchange")',
+      ukr: 'Центральний ринок (головний вхід, біля магазину "ТікТак" і "Обмін валют")',
+      rus: 'Центральный рынок (главный вход, возле магазина "ТикТак" и "Обмен валют")',
+    },
+  },
+
   spinnerAlt: {
     eng: 'Spinner',
     ukr: 'Спіннер',

@@ -5,7 +5,7 @@
   align-items: center;
 
   font-weight: 500;
-  font-size: 3vw;
+  font-size: 2.5rem;
   color: #350000;
 
   padding: 6.25vw;
@@ -53,6 +53,7 @@
   font-size: 0.8em;
   color: var(--secondary-background-color);
   text-shadow: 1px 1px 2px #000000;
+  margin: 0;
 }
 
 .attributeValue {
@@ -60,9 +61,15 @@
   font-weight: 600;
   -webkit-box-reflect: below 0
     linear-gradient(transparent, rgba(255, 255, 255, 0.2));
+  margin-top: 0;
 }
 
 .link {
   text-decoration: none;
   color: inherit;
+}
+
+.link:hover,
+.link:focus-visible {
+  text-shadow: var(--primery-box-shadow);
 }
