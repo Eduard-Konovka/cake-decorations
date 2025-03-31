@@ -1,210 +1,263 @@
 [
   {
     "_id": "116762693",
+    "image": "https://firebasestorage.googleapis.com/v0/b/cake-decorations-by-chechina.firebasestorage.app/o/categories%2F116762693.jpg?alt=media&token=07dfaa6f-4255-421b-9b02-2b7b7c1e1c1e",
     "title": {
       "ru": "Красители пищевые натуральные универсальные",
-      "ua": "Барвники харчові натуральні універсальні"
-    },
-    "image": "https://firebasestorage.googleapis.com/v0/b/cake-decorations-by-chechina.firebasestorage.app/o/categories%2F116762693.jpg?alt=media&token=07dfaa6f-4255-421b-9b02-2b7b7c1e1c1e"
+      "ua": "Барвники харчові натуральні універсальні",
+      "en": "Natural universal food dyes"
+    }
   },
   {
     "_id": "116763004",
+    "image": "https://images.prom.ua/4450814095_krasiteli-pischevye-sinteticheskie.jpg",
     "title": {
       "ua": "Барвники харчові синтетичні водорозчинні",
-      "ru": "Красители пищевые синтетические водорастворимые"
-    },
-    "image": "https://images.prom.ua/4450814095_krasiteli-pischevye-sinteticheskie.jpg"
+      "ru": "Красители пищевые синтетические водорастворимые",
+      "en": "Synthetic water-soluble food dyes"
+    }
   },
   {
     "_id": "116763200",
+    "image": "https://images.prom.ua/4450818560_krasiteli-sinteticheskie-pischevye.jpg",
     "title": {
       "ua": "Барвники харчові синтетичні жиророзчинні",
-      "ru": "Красители синтетические пищевые жирорастворимые"
-    },
-    "image": "https://images.prom.ua/4450818560_krasiteli-sinteticheskie-pischevye.jpg"
+      "ru": "Красители синтетические пищевые жирорастворимые",
+      "en": "Synthetic fat-soluble food dyes"
+    }
   },
   {
     "_id": "116763268",
+    "image": "https://images.prom.ua/4450848358_krasiteli-pischevye-universalnye.jpg",
     "title": {
       "ua": "Барвники харчові універсальні",
-      "ru": "Красители пищевые универсальные"
-    },
-    "image": "https://images.prom.ua/4450848358_krasiteli-pischevye-universalnye.jpg"
+      "ru": "Красители пищевые универсальные",
+      "en": "Food colorings universal"
+    }
   },
   {
     "_id": "116763326",
+    "image": "https://images.prom.ua/4450880312_kandurin-pischevoj.jpg",
     "title": {
       "ua": "Кандурін харчовий",
-      "ru": "Кандурин пищевой"
-    },
-    "image": "https://images.prom.ua/4450880312_kandurin-pischevoj.jpg"
+      "ru": "Кандурин пищевой",
+      "en": "Food grade kandurin"
+    }
   },
   {
     "_id": "116763469",
+    "image": "https://images.prom.ua/4547188714_pischevoe-zoloto-bronza.jpg",
     "title": {
       "ua": "Харчове золото та срібло для кондитерського декору",
-      "ru": "Пищевое золото, бронза и серебро для кондитерского декора"
-    },
-    "image": "https://images.prom.ua/4547188714_pischevoe-zoloto-bronza.jpg"
+      "ru": "Пищевое золото, бронза и серебро для кондитерского декора",
+      "en": "Edible gold and silver for confectionery decoration"
+    }
   },
   {
     "_id": "116763515",
+    "image": "https://images.prom.ua/4450888465_ukrasheniya-na-tort.jpg",
     "title": {
       "ua": "Прикраси на торт посипка цукрова їстівна",
-      "ru": "Украшения на торт посыпка сахарная съедобная"
-    },
-    "image": "https://images.prom.ua/4450888465_ukrasheniya-na-tort.jpg"
+      "ru": "Украшения на торт посыпка сахарная съедобная",
+      "en": "Cake decorations, edible sugar sprinkles"
+    }
   },
   {
     "_id": "116763577",
+    "image": "https://images.prom.ua/4450638639_konditerskie-nasadki-ateco.jpg",
     "title": {
-      "ua": "Кондитерські насадки Ateco",
-      "ru": "Кондитерские насадки Ateco"
-    },
-    "image": "https://images.prom.ua/4450638639_konditerskie-nasadki-ateco.jpg"
+      "ru": "Кондитерские насадки",
+      "ua": "Кондитерські насадки",
+      "en": "Pastry nozzles"
+    }
   },
   {
     "_id": "116763867",
+    "image": "https://images.prom.ua/4489964889_saharnye-ukrasheniya-figurki.jpg",
     "title": {
       "ua": "Цукрові прикраси фігурки на торт",
-      "ru": "Сахарные украшения  фигурки на торт"
-    },
-    "image": "https://images.prom.ua/4489964889_saharnye-ukrasheniya-figurki.jpg"
+      "ru": "Сахарные украшения  фигурки на торт",
+      "en": "Sugar decorations figures on the cake"
+    }
   },
   {
     "_id": "116894256",
+    "image": "https://images.prom.ua/4467793373_konditerskie-meshki-i.jpg",
     "title": {
-      "ua": "Кондитерські мішки та перехідники-адаптери",
-      "ru": "Кондитерские мешки и переходники-адаптеры"
-    },
-    "image": "https://images.prom.ua/4467793373_konditerskie-meshki-i.jpg"
+      "ru": "Кондитерские мешки",
+      "ua": "Кондитерські мішки",
+      "en": "Pastry bags"
+    }
   },
   {
     "_id": "116894392",
+    "image": "https://images.prom.ua/4467818546_termometry-konditerskie-kulinarnye.jpg",
     "title": {
       "ua": "Термометри кондитерські кулінарні",
-      "ru": "Термометры кондитерские кулинарные"
-    },
-    "image": "https://images.prom.ua/4467818546_termometry-konditerskie-kulinarnye.jpg"
+      "ru": "Термометры кондитерские кулинарные",
+      "en": "Confectionery culinary thermometers"
+    }
   },
   {
     "_id": "116896520",
+    "image": "https://images.prom.ua/4468157276_shokoladnye-sfery.jpg",
     "title": {
       "ua": "Шоколадні сфери",
-      "ru": "Шоколадные сферы"
-    },
-    "image": "https://images.prom.ua/4468157276_shokoladnye-sfery.jpg"
+      "ru": "Шоколадные сферы",
+      "en": "Chocolate spheres"
+    }
   },
   {
     "_id": "116897236",
     "title": {
-      "ua": "Харчові барвники китайські з розпилювачем - фруктова пудра",
-      "ru": "Пищевые красители китайские с распылителем - фруктовая пудра"
+      "ru": "Короны",
+      "en": "Crowns",
+      "ua": "Корони"
     },
-    "image": "https://images.prom.ua/4468217553_pischevye-krasiteli-kitajskie.jpg"
+    "image": "https://firebasestorage.googleapis.com/v0/b/cake-decorations-by-chechina.firebasestorage.app/o/categories%2F116897236.jpg?alt=media&token=129cbfe7-77ed-4df6-b7dc-ac2209040c0b"
   },
   {
     "_id": "117164519",
+    "image": "https://images.prom.ua/4489966043_saharnye-ukrasheniya-tsvety.jpg",
     "title": {
       "ua": "Цукрові прикраси квіти на торт",
-      "ru": "Сахарные украшения цветы на торт"
-    },
-    "image": "https://images.prom.ua/4489966043_saharnye-ukrasheniya-tsvety.jpg"
+      "ru": "Сахарные украшения цветы на торт",
+      "en": "Sugar flower decorations for cake"
+    }
   },
   {
     "_id": "117164537",
+    "image": "https://images.prom.ua/4489971512_saharnye-ukrasheniya-toppery.jpg",
     "title": {
-      "ua": "Цукрові прикраси топпери ",
-      "ru": "Сахарные украшения топперы "
-    },
-    "image": "https://images.prom.ua/4489971512_saharnye-ukrasheniya-toppery.jpg"
+      "ru": "Сахарные украшения топперы ",
+      "en": "Sugar decoration toppers",
+      "ua": "Цукрові прикраси топери "
+    }
   },
   {
     "_id": "117636794",
+    "image": "https://images.prom.ua/4529705104_krem-glazur-zhele.jpg",
     "title": {
-      "ua": "Крем, глазурь, желе, шоколад",
-      "ru": "Крем, глазурь, желе, шоколад"
-    },
-    "image": "https://images.prom.ua/4529705104_krem-glazur-zhele.jpg"
+      "ru": "Крем, глазурь, желе, шоколад",
+      "en": "Cream, icing, jelly, chocolate",
+      "ua": "Крем, глазур, желе, шоколад"
+    }
   },
   {
     "_id": "117735788",
+    "image": "https://images.prom.ua/4536570796_aromatizatory-pischevye.jpg",
     "title": {
       "ua": "Ароматизатори харчові",
-      "ru": "Ароматизаторы пищевые "
-    },
-    "image": "https://images.prom.ua/4536570796_aromatizatory-pischevye.jpg"
+      "ru": "Ароматизаторы пищевые ",
+      "en": "Food flavorings"
+    }
   },
   {
     "_id": "117736140",
+    "image": "https://images.prom.ua/4536626877_glittery-pischevye-konditerskie.jpg",
     "title": {
-      "ua": "Глітери харчові кондитерські",
-      "ru": "Глиттеры пищевые кондитерские"
-    },
-    "image": "https://images.prom.ua/4536626877_glittery-pischevye-konditerskie.jpg"
+      "ru": "Блеск кондитерский",
+      "en": "Confectionery glitter",
+      "ua": "Блиск кондитерський"
+    }
   },
   {
     "_id": "118047906",
+    "image": "https://images.prom.ua/4561011687_pischevye-flomastery-i.jpg",
     "title": {
       "ua": "Харчові фломастери та олівці",
-      "ru": "Пищевые фломастеры и карандаши"
-    },
-    "image": "https://images.prom.ua/4561011687_pischevye-flomastery-i.jpg"
+      "ru": "Пищевые фломастеры и карандаши",
+      "en": "Edible markers and pencils"
+    }
   },
   {
     "_id": "118049846",
+    "image": "https://images.prom.ua/4561260401_tovary-brenda-dr.jpg",
     "title": {
       "ua": "Товари бренду Dr. Oetker (Др. Откер)",
-      "ru": "Товары бренда  Dr. Oetker (Др. Откер)"
-    },
-    "image": "https://images.prom.ua/4561260401_tovary-brenda-dr.jpg"
+      "ru": "Товары бренда  Dr. Oetker (Др. Откер)",
+      "en": "Dr. Oetker brand products"
+    }
   },
   {
     "_id": "122470779",
+    "image": "https://images.prom.ua/4987024875_konditerskoe-syre.jpg",
     "title": {
       "ua": "Кондитерська сировина",
-      "ru": "Кондитерское сырье"
-    },
-    "image": "https://images.prom.ua/4987024875_konditerskoe-syre.jpg"
+      "ru": "Кондитерское сырье",
+      "en": "Confectionery raw materials"
+    }
   },
   {
     "_id": "122470839",
+    "image": "https://images.prom.ua/4987044040_toppery.jpg",
     "title": {
-      "ua": "Топпери",
-      "ru": "Топперы"
-    },
-    "image": "https://images.prom.ua/4987044040_toppery.jpg"
+      "ru": "Топперы",
+      "ua": "Топери",
+      "en": "Toppers"
+    }
   },
   {
     "_id": "122470855",
+    "image": "https://images.prom.ua/4987054816_konditerskie-instrumenty.jpg",
     "title": {
-      "ua": "Кондитерскі приналежності",
-      "ru": "Кондитерские инструменты"
-    },
-    "image": "https://images.prom.ua/4987054816_konditerskie-instrumenty.jpg"
+      "ru": "Кондитерские инструменты",
+      "ua": "Кондитерські інструменти",
+      "en": "Pastry tools"
+    }
   },
   {
     "_id": "126384788",
+    "image": "https://images.prom.ua/5312684222_svechki-na-tort.jpg",
     "title": {
-      "ua": "Свечки на торт",
-      "ru": "Свечки на торт"
-    },
-    "image": "https://images.prom.ua/5312684222_svechki-na-tort.jpg"
+      "ru": "Свечки на торт",
+      "en": "Candles on the cake",
+      "ua": "Свічки на торт"
+    }
   },
   {
     "_id": "126384908",
+    "image": "https://images.prom.ua/5312686898_vafelnye-kartinki-na.jpg",
     "title": {
       "ua": "Вафельні картинки на торт",
-      "ru": "Вафельные картинки на торт"
-    },
-    "image": "https://images.prom.ua/5312686898_vafelnye-kartinki-na.jpg"
+      "ru": "Вафельные картинки на торт",
+      "en": "Waffle pictures for cake"
+    }
   },
   {
     "_id": "128291102",
+    "image": "https://images.prom.ua/5491461087_mastika-saharnaya-konditerskaya.jpg",
     "title": {
       "ua": "Мастика цукрова кондитерська",
-      "ru": "Мастика сахарная кондитерская"
+      "ru": "Мастика сахарная кондитерская",
+      "en": "Sugar confectionery mastic"
+    }
+  },
+  {
+    "_id": "1743423378546",
+    "title": {
+      "ru": "Бумажные формы для выпечки",
+      "ua": "Паперові форми для випічки",
+      "en": "Paper baking forms"
     },
-    "image": "https://images.prom.ua/5491461087_mastika-saharnaya-konditerskaya.jpg"
+    "image": "https://firebasestorage.googleapis.com/v0/b/cake-decorations-by-chechina.firebasestorage.app/o/categories%2F1743423378546.jpg?alt=media&token=19781e58-6e20-4e79-b5aa-83d8fd3f8f87"
+  },
+  {
+    "_id": "1743424122610",
+    "title": {
+      "ru": "Коробки для кондитерских изделий",
+      "en": "Confectionery boxes",
+      "ua": "Коробки для кондитерських виробів"
+    },
+    "image": "https://firebasestorage.googleapis.com/v0/b/cake-decorations-by-chechina.firebasestorage.app/o/categories%2F1743424122610.jpg?alt=media&token=e727dcb3-65ca-46d2-9759-157dcc119ef3"
+  },
+  {
+    "_id": "1743424350011",
+    "title": {
+      "ru": "Подложки для тортов",
+      "ua": "Підкладки для тортів",
+      "en": "Cake stands"
+    },
+    "image": "https://firebasestorage.googleapis.com/v0/b/cake-decorations-by-chechina.firebasestorage.app/o/categories%2F1743424350011.jpg?alt=media&token=d79feab6-abc4-4ab5-93f2-81ba667a6f13"
   }
 ]
