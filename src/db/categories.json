@@ -64,12 +64,12 @@
   },
   {
     "_id": "116763577",
-    "image": "https://images.prom.ua/4450638639_konditerskie-nasadki-ateco.jpg",
     "title": {
       "ru": "Кондитерские насадки",
       "ua": "Кондитерські насадки",
       "en": "Pastry nozzles"
-    }
+    },
+    "image": "https://firebasestorage.googleapis.com/v0/b/cake-decorations-by-chechina.firebasestorage.app/o/categories%2F116763577.jpg?alt=media&token=726713b5-af19-4fdd-85e7-f9ea0b0a7c15"
   },
   {
     "_id": "116763867",
@@ -106,15 +106,6 @@
       "ru": "Шоколадные сферы",
       "en": "Chocolate spheres"
     }
-  },
-  {
-    "_id": "116897236",
-    "title": {
-      "ru": "Короны",
-      "en": "Crowns",
-      "ua": "Корони"
-    },
-    "image": "https://firebasestorage.googleapis.com/v0/b/cake-decorations-by-chechina.firebasestorage.app/o/categories%2F116897236.jpg?alt=media&token=129cbfe7-77ed-4df6-b7dc-ac2209040c0b"
   },
   {
     "_id": "117164519",
@@ -259,5 +250,23 @@
       "en": "Cake stands"
     },
     "image": "https://firebasestorage.googleapis.com/v0/b/cake-decorations-by-chechina.firebasestorage.app/o/categories%2F1743424350011.jpg?alt=media&token=d79feab6-abc4-4ab5-93f2-81ba667a6f13"
+  },
+  {
+    "_id": "1743439612825",
+    "title": {
+      "ru": "Трафареты для торта",
+      "en": "Cake Stencils",
+      "ua": "Трафарети для торта"
+    },
+    "image": "https://firebasestorage.googleapis.com/v0/b/cake-decorations-by-chechina.firebasestorage.app/o/categories%2F1743439612825.jpg?alt=media&token=7490b0e7-6e6a-434d-ad5e-657951aa2952"
+  },
+  {
+    "_id": "1743439955870",
+    "image": "https://firebasestorage.googleapis.com/v0/b/cake-decorations-by-chechina.firebasestorage.app/o/categories%2F116897236.jpg?alt=media&token=129cbfe7-77ed-4df6-b7dc-ac2209040c0b",
+    "title": {
+      "en": "Crowns",
+      "ru": "Короны",
+      "ua": "Корони"
+    }
   }
 ]
