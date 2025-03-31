@@ -31,7 +31,11 @@ export default function CartBar({
     if (auth.currentUser) {
       onSubmit(Number(totalCost));
     } else {
-      navigate('/signin');
+      navigate('/ordering', {
+        state: {
+          totalCost: Number(totalCost),
+        },
+      });
     }
   };
 

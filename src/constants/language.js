@@ -308,6 +308,12 @@ export const LANGUAGE = {
   },
 
   authorizationViews: {
+    orderingTitle: {
+      eng: 'or enter your details to send',
+      ukr: 'або введіть дані для відправки',
+      rus: 'или введите данные для отправки',
+    },
+
     firstName: {
       label: {
         eng: 'First name:',
