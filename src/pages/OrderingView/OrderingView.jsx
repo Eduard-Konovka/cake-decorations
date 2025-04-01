@@ -7,9 +7,9 @@ import { Spinner, Button, Processing } from 'components';
 import { getLanguage } from 'functions';
 import { languageWrapper } from 'middlewares';
 import { GLOBAL, LANGUAGE } from 'constants';
-import s from './Ordering.module.css';
+import s from './OrderingView.module.css';
 
-export default function Ordering({ sending, onSubmit }) {
+export default function OrderingView({ sending, onSubmit }) {
   const { mainHeight } = useGlobalState('global');
   const location = useLocation();
   const totalCost = location.state?.totalCost;
@@ -313,7 +313,7 @@ export default function Ordering({ sending, onSubmit }) {
   );
 }
 
-Ordering.propTypes = {
+OrderingView.propTypes = {
   sending: PropTypes.bool.isRequired,
   onSubmit: PropTypes.func.isRequired,
 };

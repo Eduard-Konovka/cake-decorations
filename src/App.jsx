@@ -35,8 +35,8 @@ const DeliveryView = lazy(() =>
 const CartView = lazy(() =>
   import('pages/CartView' /* webpackChunkName: "CartView" */),
 );
-const Ordering = lazy(() =>
-  import('pages/Ordering' /* webpackChunkName: "Ordering" */),
+const OrderingView = lazy(() =>
+  import('pages/OrderingView' /* webpackChunkName: "OrderingView" */),
 );
 const SignInView = lazy(() =>
   import('pages/SignInView' /* webpackChunkName: "SignInView" */),
@@ -258,7 +258,7 @@ export default function App() {
             path="/ordering"
             element={
               <PublicRoute>
-                <Ordering sending={sending} onSubmit={submitCart} />
+                <OrderingView sending={sending} onSubmit={submitCart} />
               </PublicRoute>
             }
           />
