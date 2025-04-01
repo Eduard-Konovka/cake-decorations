@@ -268,5 +268,14 @@
       "ua": "Корони"
     },
     "image": "https://firebasestorage.googleapis.com/v0/b/cake-decorations-by-chechina.firebasestorage.app/o/categories%2F1743439955870.jpg?alt=media&token=a01c7ff2-9548-4722-b110-0ca08a8f3cd0"
+  },
+  {
+    "_id": "1743522962365",
+    "title": {
+      "en": "Waffle decor",
+      "ru": "Вафельный декор",
+      "ua": "Вафельний декор"
+    },
+    "image": "https://firebasestorage.googleapis.com/v0/b/cake-decorations-by-chechina.firebasestorage.app/o/categories%2F1743522962365.jpg?alt=media&token=9b468c7b-fc68-42a9-b4d7-9549b1f7bed7"
   }
 ]
