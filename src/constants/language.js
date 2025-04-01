@@ -394,43 +394,55 @@ export const LANGUAGE = {
       },
     },
 
-    address: {
+    delivery: {
       label: {
-        eng: 'Courier delivery address (street, house number, apartment):',
-        ukr: 'Адреса курʼєрської доставки (вулиця, номер будинку, квартири):',
-        rus: 'Адрес курьерской доставки (улица, номер дома, квартиры):',
+        eng: 'Delivery method by "Nova Poshta":',
+        ukr: 'Спосіб доставки "Новою поштою":',
+        rus: 'Способ доставки "Новой почтой":',
       },
 
       title: {
-        eng: 'Enter the address for courier delivery: street, house number and apartment (if necessary). For example: 10 Shevchenko St., apt. 25 or 45 Nezalezhnosti Ave.',
-        ukr: 'Введіть адресу для кур’єрської доставки: вулиця, номер будинку та квартири (за потреби). Наприклад: вул. Шевченка, 10, кв. 25 або просп. Незалежності, 45',
-        rus: 'Введите адрес для курьерской доставки: улица, номер дома и квартиры (при необходимости). К примеру: ул. Шевченко, 10, кв. 25 или просп. Независимости, 45',
+        eng: 'Choose the method of delivery of goods to you by "Nova Poshta": to a branch, to an automatic mailbox or by courier to your address',
+        ukr: 'Оберіть спосіб доставки вам товару "Новою поштою": на відділення, в поштомат або курʼєром за вашою адресою',
+        rus: 'Выберите способ доставки вам товара "Новой почтой": на отделение, в почтомат или курьером по вашему адресу',
       },
 
-      placeholder: {
-        eng: 'Enter your address...',
-        ukr: 'Введіть адресу...',
-        rus: 'Введите адрес...',
+      branch: {
+        eng: 'To the branch',
+        ukr: 'На відділення',
+        rus: 'На отделение',
+      },
+
+      mailbox: {
+        eng: 'To the automatic mailbox',
+        ukr: 'В поштомат',
+        rus: 'В почтомат',
+      },
+
+      courier: {
+        eng: 'Courier delivery',
+        ukr: 'Курʼєрська доставка',
+        rus: 'Курьерская доставка',
       },
     },
 
-    delivery: {
+    address: {
       label: {
-        eng: 'Branch or post box "Nova Poshta":',
-        ukr: 'Відділення або поштомат "Нової пошти":',
-        rus: 'Отделение или почтомат "Новой почты":',
+        eng: 'Branch, automatic mailbox or courier delivery address of "Nova Poshta":',
+        ukr: 'Відділення, поштомат або адреса курʼєрської доставки "Нової пошти":',
+        rus: 'Отделение, почтомат или адрес курьерской доставки "Новой почты":',
       },
 
       title: {
-        eng: 'Enter the number or address of the Nova Poshta branch or ATM. For example: 25, 101, 200/1 or 15637 (22 Khreshchatyk St.)',
-        ukr: 'Введіть номер або адресу відділення чи поштомату "Нової пошти". Наприклад: 25, 101, 200/1 або 15637 (вул. Хрещатик, 22)',
-        rus: 'Введите номер или адрес отделения или почтовой почты "Новой почты". Например: 25, 101, 200/1 или 15637 (ул. Крещатик, 22)',
+        eng: 'Enter the number of the branch or automatic mailbox or the address for courier delivery of "Nova Poshta". For a branch or post office - the number and possibly the address. For example: 25, 101, 200 or 15637 (22 Khreshchatyk St.). For courier delivery - the street, house number and apartment number (if necessary). For example: 10/3 Shevchenko St., apt. 25 or 45 Nezalezhnosti Ave.',
+        ukr: 'Введіть номер відділення чи поштомату або адресу для кур’єрської доставки "Нової пошти". Для відділення чи поштомату - номер та можливо адресу. Наприклад: 25, 101, 200 або 15637 (вул. Хрещатик, 22). Для кур’єрської доставки - вулиця, номер будинку та квартири (за потреби). Наприклад: вул. Шевченка, 10/3, кв. 25 або просп. Незалежності, 45',
+        rus: 'Введите номер отделения или почтомата или адрес для курьерской доставки "Новой почты". Для отделения или почтомата - номер и адрес. Например: 25, 101, 200 или 15637 (ул. Крещатик, 22). Для курьерской доставки – улица, номер дома и квартиры (при необходимости). К примеру: ул. Шевченко, 10/3, кв. 25 или просп. Независимости, 45',
       },
 
       placeholder: {
-        eng: 'Enter the branch or post box number...',
-        ukr: 'Введіть № відділення або поштомату...',
-        rus: 'Введите № отделения или почтомата...',
+        eng: 'Enter your branch, mailbox or address...',
+        ukr: 'Введіть відділення, поштомат або адресу...',
+        rus: 'Введите отделение, почтомат или адрес...',
       },
     },
 

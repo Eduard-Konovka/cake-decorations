@@ -55,21 +55,32 @@ export default function OrderingView({ sending, onSubmit }) {
     }));
   };
 
+  const handleDeliveryChange = event => {
+    switch (event.target.value) {
+      case 'branch':
+        console.log(event.target.value);
+        break;
+
+      case 'mailbox':
+        console.log(event.target.value);
+        break;
+
+      case 'courier':
+        console.log(event.target.value);
+        break;
+
+      default:
+        console.log(event.target.value);
+        break;
+    }
+  };
+
   const handleAddressChange = event => {
     const value = event.target.value.trim();
 
     setState(prevState => ({
       ...prevState,
       address: value,
-    }));
-  };
-
-  const handlePostDeliveryChange = event => {
-    const value = event.target.value.trim();
-
-    setState(prevState => ({
-      ...prevState,
-      delivery: value,
     }));
   };
 
@@ -246,6 +257,38 @@ export default function OrderingView({ sending, onSubmit }) {
               onChange={handleLocalityChange}
             />
 
+            <label htmlFor="delivery" className={s.label}>
+              {languageDeterminer(LANGUAGE.authorizationViews.delivery.label)}
+            </label>
+
+            <select
+              id="delivery"
+              name="delivery"
+              title={languageDeterminer(
+                LANGUAGE.authorizationViews.delivery.title,
+              )}
+              className={s.input}
+              onChange={handleDeliveryChange}
+            >
+              <option value={'branch'}>
+                {languageDeterminer(
+                  LANGUAGE.authorizationViews.delivery.branch,
+                )}
+              </option>
+
+              <option value={'mailbox'}>
+                {languageDeterminer(
+                  LANGUAGE.authorizationViews.delivery.mailbox,
+                )}
+              </option>
+
+              <option value={'courier'}>
+                {languageDeterminer(
+                  LANGUAGE.authorizationViews.delivery.courier,
+                )}
+              </option>
+            </select>
+
             <label htmlFor="address" className={s.label}>
               {languageDeterminer(LANGUAGE.authorizationViews.address.label)}
             </label>
@@ -266,28 +309,6 @@ export default function OrderingView({ sending, onSubmit }) {
               maxLength={GLOBAL.inputs.common.maxLength}
               className={s.input}
               onChange={handleAddressChange}
-            />
-
-            <label htmlFor="delivery" className={s.label}>
-              {languageDeterminer(LANGUAGE.authorizationViews.delivery.label)}
-            </label>
-
-            <input
-              id="delivery"
-              name="delivery"
-              type="text"
-              title={languageDeterminer(
-                LANGUAGE.authorizationViews.delivery.title,
-              )}
-              pattern={languageDeterminer(GLOBAL.inputs.common.pattern)}
-              placeholder={languageDeterminer(
-                LANGUAGE.authorizationViews.delivery.placeholder,
-              )}
-              autoComplete="family-name"
-              minLength={GLOBAL.inputs.common.minLength}
-              maxLength={GLOBAL.inputs.common.maxLength}
-              className={s.input}
-              onChange={handlePostDeliveryChange}
             />
 
             <Button
