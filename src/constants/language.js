@@ -409,8 +409,8 @@ export const LANGUAGE = {
 
       branch: {
         eng: 'To the branch',
-        ukr: 'На відділення',
-        rus: 'На отделение',
+        ukr: 'У відділення',
+        rus: 'В отделение',
       },
 
       mailbox: {
@@ -520,7 +520,27 @@ export const LANGUAGE = {
       },
     },
 
+    submitButton: {
+      title: {
+        eng: 'Send your order',
+        ukr: 'Відправити ваше замовлення',
+        rus: 'Отправить ваш заказ',
+      },
+
+      text: {
+        eng: 'Send',
+        ukr: 'Відправити',
+        rus: 'Отправить',
+      },
+    },
+
     alert: {
+      noCart: {
+        eng: 'There are no items in your cart. Please add the items you want to buy to your cart',
+        ukr: 'В вашому кошику немає товарів. Будь ласка додайте в кошик товари, які ви хочете купити',
+        rus: 'В вашей корзине нет товаров. Пожалуйста добавьте в корзину товары, которые вы хотите купить',
+      },
+
       noFirstName: {
         eng: 'Please fill in the name field',
         ukr: 'Будь ласка, заповніть поле імені',

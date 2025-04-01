@@ -1,7 +1,3 @@
 export { initialUser, auth } from './state';
-export {
-  authSignUpUser,
-  authSignInUser,
-  authSignOutUser,
-  authStateChange,
-} from './operations';
+export { updateUserProfile } from './actions';
+export { authSignUpUser, authSignInUser, authSignOutUser } from './operations';

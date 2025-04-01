@@ -1,7 +1,6 @@
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  onAuthStateChanged,
   updateProfile,
   signOut,
 } from 'firebase/auth';
@@ -28,7 +27,6 @@ export const authSignUpUser = async (
 
     const newUser = {
       ...user,
-      fullName,
       uid: auth.currentUser.uid,
     };
 
@@ -64,17 +62,4 @@ export const authSignOutUser = async (state, payload, changeGlobalState) => {
   await signOut(auth);
 
   return changeGlobalState(updateUserProfile, initialUser);
-};
-
-export const authStateChange = async (state, payload, changeGlobalState) => {
-  await onAuthStateChanged(auth, user => {
-    if (user) {
-      const newUser = {
-        uid: user.uid,
-        fullName: user.displayName,
-      };
-
-      changeGlobalState(updateUserProfile, newUser);
-    }
-  });
 };

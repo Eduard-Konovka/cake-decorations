@@ -10,9 +10,9 @@ export {
 } from './global';
 export {
   initialUser,
+  updateUserProfile,
   authSignUpUser,
   authSignInUser,
   authSignOutUser,
-  authStateChange,
 } from './auth';
 export { default as GlobalState } from './GlobalState.jsx';

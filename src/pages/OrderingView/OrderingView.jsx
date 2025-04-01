@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
-import { useLocation, Link } from 'react-router-dom';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import PropTypes from 'prop-types';
-import { initialUser, useGlobalState } from 'state';
+import {
+  useGlobalState,
+  useChangeGlobalState,
+  initialUser,
+  updateUserProfile,
+} from 'state';
 import { Spinner, Button, Processing } from 'components';
 import { getLanguage } from 'functions';
 import { languageWrapper } from 'middlewares';
@@ -10,7 +15,9 @@ import { GLOBAL, LANGUAGE } from 'constants';
 import s from './OrderingView.module.css';
 
 export default function OrderingView({ sending, onSubmit }) {
-  const { mainHeight } = useGlobalState('global');
+  const { mainHeight, cart } = useGlobalState('global');
+  const changeGlobalState = useChangeGlobalState();
+  const navigate = useNavigate();
   const location = useLocation();
   const totalCost = location.state?.totalCost;
 
@@ -20,74 +27,55 @@ export default function OrderingView({ sending, onSubmit }) {
   const languageDeterminer = obj => languageWrapper(getLanguage(), obj);
 
   const handleFirstNameChange = event => {
-    const value = event.target.value.trim();
-
     setState(prevState => ({
       ...prevState,
-      firstName: value,
+      firstName: event.target.value.trim(),
     }));
   };
 
   const handleLastNameChange = event => {
-    const value = event.target.value.trim();
-
     setState(prevState => ({
       ...prevState,
-      lastName: value,
+      lastName: event.target.value.trim(),
     }));
   };
 
   const handlePhoneChange = event => {
-    const value = event.target.value.trim();
-
     setState(prevState => ({
       ...prevState,
-      phone: value,
+      phone: event.target.value.trim(),
     }));
   };
 
   const handleLocalityChange = event => {
-    const value = event.target.value.trim();
-
     setState(prevState => ({
       ...prevState,
-      locality: value,
+      locality: event.target.value.trim(),
     }));
   };
 
   const handleDeliveryChange = event => {
-    switch (event.target.value) {
-      case 'branch':
-        console.log(event.target.value);
-        break;
-
-      case 'mailbox':
-        console.log(event.target.value);
-        break;
-
-      case 'courier':
-        console.log(event.target.value);
-        break;
-
-      default:
-        console.log(event.target.value);
-        break;
-    }
-  };
-
-  const handleAddressChange = event => {
-    const value = event.target.value.trim();
-
     setState(prevState => ({
       ...prevState,
-      address: value,
+      delivery: event.target.value,
     }));
   };
 
-  const handleLoginPress = () => {
+  const handleAddressChange = event => {
+    setState(prevState => ({
+      ...prevState,
+      address: event.target.value.trim(),
+    }));
+  };
+
+  const handleLoginPress = async () => {
     setLoading(true);
 
-    if (!state.firstName || state.firstName === '') {
+    if (cart.length < 1) {
+      navigate('/cart');
+      toast.error(languageDeterminer(LANGUAGE.authorizationViews.alert.noCart));
+      setLoading(false);
+    } else if (!state.firstName || state.firstName === '') {
       toast.error(
         languageDeterminer(LANGUAGE.authorizationViews.alert.noFirstName),
       );
@@ -112,13 +100,10 @@ export default function OrderingView({ sending, onSubmit }) {
         languageDeterminer(LANGUAGE.authorizationViews.alert.noAddress),
       );
       setLoading(false);
-    } else if (!state.delivery || state.delivery === '') {
-      toast.error(
-        languageDeterminer(LANGUAGE.authorizationViews.alert.noDelivery),
-      );
-      setLoading(false);
     } else {
-      onSubmit(totalCost);
+      await changeGlobalState(updateUserProfile, state);
+      onSubmit(totalCost, state);
+      navigate('/cart');
       setState(initialUser);
       setLoading(false);
     }
@@ -313,18 +298,21 @@ export default function OrderingView({ sending, onSubmit }) {
 
             <Button
               title={languageDeterminer(
-                LANGUAGE.authorizationViews.signUpButton.title,
+                LANGUAGE.authorizationViews.submitButton.title,
               )}
               type="button"
-              typeForm="signin"
+              typeForm="button"
               disabled={
-                state.firstName.length < GLOBAL.inputs.common.minLength ||
-                state.firstName.length > GLOBAL.inputs.common.maxLength
+                !state.firstName ||
+                !state.lastName ||
+                !state.phone ||
+                !state.locality ||
+                !state.address
               }
               onClick={handleLoginPress}
             >
               {languageDeterminer(
-                LANGUAGE.authorizationViews.signUpButton.text,
+                LANGUAGE.authorizationViews.submitButton.text,
               )}
             </Button>
           </form>
