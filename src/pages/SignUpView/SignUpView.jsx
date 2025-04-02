@@ -60,21 +60,21 @@ export default function SignUpView() {
     }));
   };
 
+  const handleDeliveryChange = event => {
+    const value = event.target.value;
+
+    setState(prevState => ({
+      ...prevState,
+      delivery: value,
+    }));
+  };
+
   const handleAddressChange = event => {
     const value = event.target.value.trim();
 
     setState(prevState => ({
       ...prevState,
       address: value,
-    }));
-  };
-
-  const handlePostDeliveryChange = event => {
-    const value = event.target.value.trim();
-
-    setState(prevState => ({
-      ...prevState,
-      delivery: value,
     }));
   };
 
@@ -122,11 +122,6 @@ export default function SignUpView() {
     } else if (!state.address || state.address === '') {
       toast.error(
         languageDeterminer(LANGUAGE.authorizationViews.alert.noAddress),
-      );
-      setLoading(false);
-    } else if (!state.delivery || state.delivery === '') {
-      toast.error(
-        languageDeterminer(LANGUAGE.authorizationViews.alert.noDelivery),
       );
       setLoading(false);
     } else if (!state.email || state.email === '') {
@@ -248,6 +243,38 @@ export default function SignUpView() {
               onChange={handleLocalityChange}
             />
 
+            <label htmlFor="delivery" className={s.label}>
+              {languageDeterminer(LANGUAGE.authorizationViews.delivery.label)}
+            </label>
+
+            <select
+              id="delivery"
+              name="delivery"
+              title={languageDeterminer(
+                LANGUAGE.authorizationViews.delivery.title,
+              )}
+              className={s.input}
+              onChange={handleDeliveryChange}
+            >
+              <option value={'branch'}>
+                {languageDeterminer(
+                  LANGUAGE.authorizationViews.delivery.branch,
+                )}
+              </option>
+
+              <option value={'mailbox'}>
+                {languageDeterminer(
+                  LANGUAGE.authorizationViews.delivery.mailbox,
+                )}
+              </option>
+
+              <option value={'courier'}>
+                {languageDeterminer(
+                  LANGUAGE.authorizationViews.delivery.courier,
+                )}
+              </option>
+            </select>
+
             <label htmlFor="address" className={s.label}>
               {languageDeterminer(LANGUAGE.authorizationViews.address.label)}
             </label>
@@ -268,28 +295,6 @@ export default function SignUpView() {
               maxLength={GLOBAL.inputs.common.maxLength}
               className={s.input}
               onChange={handleAddressChange}
-            />
-
-            <label htmlFor="delivery" className={s.label}>
-              {languageDeterminer(LANGUAGE.authorizationViews.delivery.label)}
-            </label>
-
-            <input
-              id="delivery"
-              name="delivery"
-              type="text"
-              title={languageDeterminer(
-                LANGUAGE.authorizationViews.delivery.title,
-              )}
-              pattern={languageDeterminer(GLOBAL.inputs.common.pattern)}
-              placeholder={languageDeterminer(
-                LANGUAGE.authorizationViews.delivery.placeholder,
-              )}
-              autoComplete="family-name"
-              minLength={GLOBAL.inputs.common.minLength}
-              maxLength={GLOBAL.inputs.common.maxLength}
-              className={s.input}
-              onChange={handlePostDeliveryChange}
             />
 
             <label htmlFor="email" className={s.label}>
