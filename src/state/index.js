@@ -12,6 +12,7 @@ export {
   initialUser,
   updateUserProfile,
   authSignUpUser,
+  authReSignUpUser,
   authSignInUser,
   authSignOutUser,
 } from './auth';

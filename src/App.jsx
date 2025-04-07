@@ -44,6 +44,9 @@ const SignInView = lazy(() =>
 const SignUpView = lazy(() =>
   import('pages/SignUpView' /* webpackChunkName: "SignUpView" */),
 );
+const ReSignUpView = lazy(() =>
+  import('pages/ReSignUpView' /* webpackChunkName: "ReSignUpView" */),
+);
 const NotFoundView = lazy(() =>
   import('pages/NotFoundView' /* webpackChunkName: "NotFoundView" */),
 );
@@ -180,6 +183,15 @@ export default function App() {
             element={
               <PublicRoute restricted>
                 <SignUpView />
+              </PublicRoute>
+            }
+          />
+
+          <Route
+            path="/resignup"
+            element={
+              <PublicRoute>
+                <ReSignUpView />
               </PublicRoute>
             }
           />

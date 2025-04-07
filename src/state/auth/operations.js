@@ -40,6 +40,25 @@ export const authSignUpUser = async (
   }
 };
 
+export const authReSignUpUser = async (
+  state,
+  { user, errorTitle },
+  changeGlobalState,
+) => {
+  try {
+    const newUser = {
+      ...user,
+      uid: auth.currentUser.uid,
+    };
+
+    saveProfileToDatabase(newUser);
+
+    return changeGlobalState(updateUserProfile, newUser);
+  } catch (error) {
+    toast.error(`${errorTitle}: ${error.message}`);
+  }
+};
+
 export const authSignInUser = async (
   state,
   { user, errorTitle },
