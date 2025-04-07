@@ -9,7 +9,13 @@ import {
   updateMainHeight,
   updateCart,
 } from 'state';
-import { Container, AppBar, Footer, PublicRoute } from 'components';
+import {
+  Container,
+  AppBar,
+  Footer,
+  PublicRoute,
+  PrivateRoute,
+} from 'components';
 import { getLanguage } from 'functions';
 import { languageWrapper } from 'middlewares';
 import { GLOBAL, LANGUAGE } from 'constants';
@@ -190,9 +196,9 @@ export default function App() {
           <Route
             path="/resignup"
             element={
-              <PublicRoute>
+              <PrivateRoute>
                 <ReSignUpView />
-              </PublicRoute>
+              </PrivateRoute>
             }
           />
 
