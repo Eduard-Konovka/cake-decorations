@@ -11,18 +11,20 @@ import {
 import { Spinner, Button, Processing } from 'components';
 import { getLanguage } from 'functions';
 import { languageWrapper } from 'middlewares';
+import { auth } from 'db';
 import { GLOBAL, LANGUAGE } from 'constants';
 import s from './OrderingView.module.css';
 
 export default function OrderingView({ sending, onSubmit }) {
   const { mainHeight, cart } = useGlobalState('global');
+  const { user } = useGlobalState('auth');
   const changeGlobalState = useChangeGlobalState();
   const navigate = useNavigate();
   const location = useLocation();
   const totalCost = location.state?.totalCost;
 
   const [loading, setLoading] = useState(false);
-  const [state, setState] = useState(initialUser);
+  const [state, setState] = useState(user);
 
   const languageDeterminer = obj => languageWrapper(getLanguage(), obj);
 
@@ -68,7 +70,7 @@ export default function OrderingView({ sending, onSubmit }) {
     }));
   };
 
-  const handleLoginPress = async () => {
+  const handleSubmitPress = async () => {
     setLoading(true);
 
     if (cart.length < 1) {
@@ -117,41 +119,45 @@ export default function OrderingView({ sending, onSubmit }) {
         <Processing />
       ) : (
         <section className={s.thumb}>
-          <div className={s.authBox}>
-            <Button
-              title={languageDeterminer(
-                LANGUAGE.authorizationViews.signInButton.title,
-              )}
-              type="button"
-              typeForm="signin"
-              styles={s.btn}
-            >
-              <Link to="/signin" className={s.btnLink}>
-                {languageDeterminer(
-                  LANGUAGE.authorizationViews.signInButton.text,
-                )}
-              </Link>
-            </Button>
+          {!auth.currentUser && (
+            <>
+              <div className={s.authBox}>
+                <Button
+                  title={languageDeterminer(
+                    LANGUAGE.authorizationViews.signInButton.title,
+                  )}
+                  type="button"
+                  typeForm="signin"
+                  styles={s.btn}
+                >
+                  <Link to="/signin" className={s.btnLink}>
+                    {languageDeterminer(
+                      LANGUAGE.authorizationViews.signInButton.text,
+                    )}
+                  </Link>
+                </Button>
 
-            <Button
-              title={languageDeterminer(
-                LANGUAGE.authorizationViews.signUpButton.title,
-              )}
-              type="button"
-              typeForm="signin"
-              styles={s.btn}
-            >
-              <Link to="/signup" className={s.btnLink}>
-                {languageDeterminer(
-                  LANGUAGE.authorizationViews.signUpButton.text,
-                )}
-              </Link>
-            </Button>
-          </div>
+                <Button
+                  title={languageDeterminer(
+                    LANGUAGE.authorizationViews.signUpButton.title,
+                  )}
+                  type="button"
+                  typeForm="signin"
+                  styles={s.btn}
+                >
+                  <Link to="/signup" className={s.btnLink}>
+                    {languageDeterminer(
+                      LANGUAGE.authorizationViews.signUpButton.text,
+                    )}
+                  </Link>
+                </Button>
+              </div>
 
-          <p className={s.title}>
-            {languageDeterminer(LANGUAGE.authorizationViews.orderingTitle)}
-          </p>
+              <p className={s.title}>
+                {languageDeterminer(LANGUAGE.authorizationViews.orderingTitle)}
+              </p>
+            </>
+          )}
 
           <form className={s.form}>
             <label htmlFor="firstName" className={s.label}>
@@ -172,6 +178,7 @@ export default function OrderingView({ sending, onSubmit }) {
               autoComplete="given-name"
               minLength={GLOBAL.inputs.common.minLength}
               maxLength={GLOBAL.inputs.common.maxLength}
+              value={state.firstName}
               className={s.input}
               onChange={handleFirstNameChange}
             />
@@ -194,6 +201,7 @@ export default function OrderingView({ sending, onSubmit }) {
               autoComplete="family-name"
               minLength={GLOBAL.inputs.common.minLength}
               maxLength={GLOBAL.inputs.common.maxLength}
+              value={state.lastName}
               className={s.input}
               onChange={handleLastNameChange}
             />
@@ -216,6 +224,7 @@ export default function OrderingView({ sending, onSubmit }) {
               autoComplete="tel"
               minLength={GLOBAL.inputs.phone.minLength}
               maxLength={GLOBAL.inputs.phone.maxLength}
+              value={state.phone}
               className={s.input}
               onChange={handlePhoneChange}
             />
@@ -238,6 +247,7 @@ export default function OrderingView({ sending, onSubmit }) {
               autoComplete="family-name"
               minLength={GLOBAL.inputs.common.minLength}
               maxLength={GLOBAL.inputs.common.maxLength}
+              value={state.locality}
               className={s.input}
               onChange={handleLocalityChange}
             />
@@ -252,6 +262,7 @@ export default function OrderingView({ sending, onSubmit }) {
               title={languageDeterminer(
                 LANGUAGE.authorizationViews.delivery.title,
               )}
+              value={state.delivery}
               className={s.input}
               onChange={handleDeliveryChange}
             >
@@ -292,6 +303,7 @@ export default function OrderingView({ sending, onSubmit }) {
               autoComplete="family-name"
               minLength={GLOBAL.inputs.common.minLength}
               maxLength={GLOBAL.inputs.common.maxLength}
+              value={state.address}
               className={s.input}
               onChange={handleAddressChange}
             />
@@ -309,7 +321,7 @@ export default function OrderingView({ sending, onSubmit }) {
                 !state.locality ||
                 !state.address
               }
-              onClick={handleLoginPress}
+              onClick={handleSubmitPress}
             >
               {languageDeterminer(
                 LANGUAGE.authorizationViews.submitButton.text,

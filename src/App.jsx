@@ -50,7 +50,6 @@ const NotFoundView = lazy(() =>
 
 export default function App() {
   const { cart } = useGlobalState('global');
-  const { user } = useGlobalState('auth');
 
   const changeGlobalState = useChangeGlobalState();
 
@@ -130,7 +129,7 @@ export default function App() {
 
     setTimeout(() => {
       sendСart({
-        customer: customer || user,
+        customer,
         cart: cart.map(obj => ({ _id: obj._id, quantity: obj.count })),
         totalCost,
         type: 'new',
@@ -247,7 +246,6 @@ export default function App() {
                   sending={sending}
                   changeSelectCount={changeCount}
                   onDeleteProduct={removeFromCart}
-                  onSubmit={submitCart}
                 />
               </PublicRoute>
             }
