@@ -138,7 +138,11 @@ export default function SpecificProductView({
 
   useEffect(() => {
     if (!product) return;
-    const description = document.querySelector('#description');
+
+    const description =
+      document.querySelector('#mobileDescription') ||
+      document.querySelector('#desktopDescription');
+
     if (description) {
       description.innerHTML = propertyWrapper(language, product, 'description');
     }
@@ -323,13 +327,16 @@ export default function SpecificProductView({
               )}
 
               <section
-                id="description"
+                id="desktopDescription"
                 className={s.finishDescriptionSection}
               />
             </div>
           </div>
 
-          <section id="description" className={s.startDescriptionSection} />
+          <section
+            id="mobileDescription"
+            className={s.startDescriptionSection}
+          />
         </>
       )}
 
