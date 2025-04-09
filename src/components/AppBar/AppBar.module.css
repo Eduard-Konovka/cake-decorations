@@ -460,7 +460,6 @@
 }
 
 /*#region AVATAR */
-
 .avatarBtn {
   display: flex;
   justify-content: center;
@@ -474,12 +473,6 @@
   border-radius: 50%;
   background-color: transparent;
   cursor: pointer;
-  transition: transform var(--time-action) var(--time-distribution-function);
-}
-
-.avatar:hover,
-.avatar:focus-visible {
-  transform: scale(1.1);
 }
 
 @media screen and (min-width: 320px) {
