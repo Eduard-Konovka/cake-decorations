@@ -1,22 +1,25 @@
 import React, { useState } from 'react';
-import { useNavigate, useLocation, Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import PropTypes from 'prop-types';
-import { useGlobalState, useChangeGlobalState, updateUserProfile } from 'state';
-import { Spinner, Button, Processing } from 'components';
+import {
+  useGlobalState,
+  useChangeGlobalState,
+  authReSignUpUser,
+  authSignOutUser,
+} from 'state';
+import { Spinner, Button } from 'components';
 import { getLanguage } from 'functions';
 import { languageWrapper } from 'middlewares';
-import { auth } from 'db';
 import { GLOBAL, LANGUAGE } from 'constants';
-import s from './OrderingView.module.css';
+import { auth } from 'db';
+import avatar from 'assets/avatar.png';
+import s from './ReSignUpView.module.css';
 
-export default function OrderingView({ sending, onSubmit }) {
-  const { mainHeight, cart } = useGlobalState('global');
+export default function ReSignUpView() {
+  const navigate = useNavigate();
+  const { mainHeight } = useGlobalState('global');
   const { user } = useGlobalState('auth');
   const changeGlobalState = useChangeGlobalState();
-  const navigate = useNavigate();
-  const location = useLocation();
-  const totalCost = location.state?.totalCost;
 
   const [loading, setLoading] = useState(false);
   const [state, setState] = useState(user);
@@ -24,55 +27,63 @@ export default function OrderingView({ sending, onSubmit }) {
   const languageDeterminer = obj => languageWrapper(getLanguage(), obj);
 
   const handleFirstNameChange = event => {
+    const value = event.target.value.trim();
+
     setState(prevState => ({
       ...prevState,
-      firstName: event.target.value.trim(),
+      firstName: value,
     }));
   };
 
   const handleLastNameChange = event => {
+    const value = event.target.value.trim();
+
     setState(prevState => ({
       ...prevState,
-      lastName: event.target.value.trim(),
+      lastName: value,
     }));
   };
 
   const handlePhoneChange = event => {
+    const value = event.target.value.trim();
+
     setState(prevState => ({
       ...prevState,
-      phone: event.target.value.trim(),
+      phone: value,
     }));
   };
 
   const handleLocalityChange = event => {
+    const value = event.target.value.trim();
+
     setState(prevState => ({
       ...prevState,
-      locality: event.target.value.trim(),
+      locality: value,
     }));
   };
 
   const handleDeliveryChange = event => {
+    const value = event.target.value;
+
     setState(prevState => ({
       ...prevState,
-      delivery: event.target.value,
+      delivery: value,
     }));
   };
 
   const handleAddressChange = event => {
+    const value = event.target.value.trim();
+
     setState(prevState => ({
       ...prevState,
-      address: event.target.value.trim(),
+      address: value,
     }));
   };
 
-  const handleSubmitPress = async () => {
+  const signUpHendler = () => {
     setLoading(true);
 
-    if (cart.length < 1) {
-      navigate('/cart');
-      toast.error(languageDeterminer(LANGUAGE.authorizationViews.alert.noCart));
-      setLoading(false);
-    } else if (!state.firstName || state.firstName === '') {
+    if (!state.firstName || state.firstName === '') {
       toast.error(
         languageDeterminer(LANGUAGE.authorizationViews.alert.noFirstName),
       );
@@ -98,11 +109,24 @@ export default function OrderingView({ sending, onSubmit }) {
       );
       setLoading(false);
     } else {
-      await changeGlobalState(updateUserProfile, state);
-      onSubmit(totalCost, state);
-      navigate('/cart');
+      changeGlobalState(authReSignUpUser, {
+        user: state,
+        errorTitle: languageDeterminer(
+          LANGUAGE.authorizationViews.alert.authSignInUser,
+        ),
+      });
       setState(user);
       setLoading(false);
+    }
+  };
+
+  const signInHendler = () => {
+    if (auth?.currentUser) {
+      changeGlobalState(authSignOutUser);
+      setState(user);
+      navigate('/');
+    } else {
+      navigate('/signin');
     }
   };
 
@@ -110,49 +134,9 @@ export default function OrderingView({ sending, onSubmit }) {
     <main className={s.page} style={{ minHeight: mainHeight }}>
       {loading ? (
         <Spinner size={70} color="red" />
-      ) : sending ? (
-        <Processing />
       ) : (
         <section className={s.thumb}>
-          {!auth.currentUser && (
-            <>
-              <div className={s.authBox}>
-                <Button
-                  title={languageDeterminer(
-                    LANGUAGE.authorizationViews.signInButton.title,
-                  )}
-                  type="button"
-                  typeForm="signin"
-                  styles={s.btn}
-                >
-                  <Link to="/signin" className={s.btnLink}>
-                    {languageDeterminer(
-                      LANGUAGE.authorizationViews.signInButton.text,
-                    )}
-                  </Link>
-                </Button>
-
-                <Button
-                  title={languageDeterminer(
-                    LANGUAGE.authorizationViews.signUpButton.title,
-                  )}
-                  type="button"
-                  typeForm="signin"
-                  styles={s.btn}
-                >
-                  <Link to="/signup" className={s.btnLink}>
-                    {languageDeterminer(
-                      LANGUAGE.authorizationViews.signUpButton.text,
-                    )}
-                  </Link>
-                </Button>
-              </div>
-
-              <p className={s.title}>
-                {languageDeterminer(LANGUAGE.authorizationViews.orderingTitle)}
-              </p>
-            </>
-          )}
+          <img src={avatar} alt="avatar" className={s.avatar} />
 
           <form className={s.form}>
             <label htmlFor="firstName" className={s.label}>
@@ -305,21 +289,36 @@ export default function OrderingView({ sending, onSubmit }) {
 
             <Button
               title={languageDeterminer(
-                LANGUAGE.authorizationViews.submitButton.title,
+                LANGUAGE.authorizationViews.reSignUpButton.title,
               )}
               type="button"
-              disabled={
-                !state.firstName ||
-                !state.lastName ||
-                !state.phone ||
-                !state.locality ||
-                !state.address
-              }
-              onClick={handleSubmitPress}
+              typeForm="signin"
+              onClick={signUpHendler}
             >
-              {languageDeterminer(
-                LANGUAGE.authorizationViews.submitButton.text,
-              )}
+              <Link to="/categories" className={s.btnLink}>
+                {languageDeterminer(
+                  LANGUAGE.authorizationViews.reSignUpButton.text,
+                )}
+              </Link>
+            </Button>
+
+            <p className={s.separator}>
+              {languageDeterminer(LANGUAGE.authorizationViews.separator)}
+            </p>
+
+            <Button
+              title={
+                !auth?.currentUser
+                  ? languageDeterminer(LANGUAGE.appBar.signIn.title)
+                  : languageDeterminer(LANGUAGE.appBar.signOut.title)
+              }
+              type="button"
+              typeForm="signin"
+              onClick={signInHendler}
+            >
+              {!auth?.currentUser
+                ? languageDeterminer(LANGUAGE.appBar.signIn.text)
+                : languageDeterminer(LANGUAGE.appBar.signOut.text)}
             </Button>
           </form>
         </section>
@@ -327,8 +326,3 @@ export default function OrderingView({ sending, onSubmit }) {
     </main>
   );
 }
-
-OrderingView.propTypes = {
-  sending: PropTypes.bool.isRequired,
-  onSubmit: PropTypes.func.isRequired,
-};

@@ -1,12 +1,7 @@
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import {
-  useGlobalState,
-  useChangeGlobalState,
-  updateLanguage,
-  authSignOutUser,
-} from 'state';
+import { useGlobalState, useChangeGlobalState, updateLanguage } from 'state';
 import { Button } from 'components';
 import { getLanguage } from 'functions';
 import { languageWrapper } from 'middlewares';
@@ -17,15 +12,12 @@ import defaultAvatar from 'assets/defaultAvatar.png';
 import s from './AppBar.module.css';
 
 export default function AppBar({ setDefaultsProducts }) {
+  const navigate = useNavigate();
   const { language, cart } = useGlobalState('global');
   const { user } = useGlobalState('auth');
   const changeGlobalState = useChangeGlobalState();
 
   const languageDeterminer = obj => languageWrapper(getLanguage(), obj);
-
-  const signOut = () => {
-    changeGlobalState(authSignOutUser);
-  };
 
   return (
     <header id="header" className={s.header}>
@@ -64,22 +56,22 @@ export default function AppBar({ setDefaultsProducts }) {
         <div className={s.controlBox}>
           <div className={s.userbar}>
             <Button
-              title={languageDeterminer(LANGUAGE.appBar.signOut.title)}
+              title={
+                auth?.currentUser
+                  ? languageDeterminer(LANGUAGE.appBar.signOut.title)
+                  : languageDeterminer(LANGUAGE.appBar.signIn.title)
+              }
               type="button"
-              onClick={auth.currentUser && signOut}
+              typeForm="icon"
+              className={s.avatarBtn}
+              onClick={() => navigate('/resignup')}
             >
-              <Link to={!auth?.currentUser && '/signin'} className={s.btnLink}>
-                {!auth?.currentUser
-                  ? languageDeterminer(LANGUAGE.appBar.signIn.text)
-                  : languageDeterminer(LANGUAGE.appBar.signOut.text)}
-              </Link>
+              <img
+                className={s.avatar}
+                src={user?.avatar?.length > 0 ? user.avatar : defaultAvatar}
+                alt={languageDeterminer(LANGUAGE.appBar.avatarAlt)}
+              />
             </Button>
-
-            <img
-              className={s.avatar}
-              src={user?.avatar?.length > 0 ? user.avatar : defaultAvatar}
-              alt={languageDeterminer(LANGUAGE.appBar.avatarAlt)}
-            />
 
             <p className={s.user}>
               {auth.currentUser

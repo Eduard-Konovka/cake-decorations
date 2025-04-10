@@ -12,7 +12,6 @@ export default function CartView({
   sending,
   changeSelectCount,
   onDeleteProduct,
-  onSubmit,
 }) {
   const { mainHeight, cart } = useGlobalState('global');
 
@@ -29,7 +28,6 @@ export default function CartView({
         <CartBar
           changeSelectCount={changeSelectCount}
           onDeleteProduct={onDeleteProduct}
-          onSubmit={onSubmit}
         />
       ) : sending ? (
         <Processing />
@@ -48,5 +46,4 @@ CartView.propTypes = {
   sending: PropTypes.bool.isRequired,
   changeSelectCount: PropTypes.func.isRequired,
   onDeleteProduct: PropTypes.func.isRequired,
-  onSubmit: PropTypes.func.isRequired,
 };

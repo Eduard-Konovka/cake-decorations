@@ -5,15 +5,10 @@ import { useGlobalState } from 'state';
 import { CartList, Button } from 'components';
 import { getLanguage } from 'functions';
 import { languageWrapper } from 'middlewares';
-import { auth } from 'db';
 import { LANGUAGE } from 'constants';
 import s from './CartBar.module.css';
 
-export default function CartBar({
-  changeSelectCount,
-  onDeleteProduct,
-  onSubmit,
-}) {
+export default function CartBar({ changeSelectCount, onDeleteProduct }) {
   const navigate = useNavigate();
   const { cart } = useGlobalState('global');
 
@@ -28,15 +23,11 @@ export default function CartBar({
   }, [cart]);
 
   const completePurchase = () => {
-    if (auth.currentUser) {
-      onSubmit(Number(totalCost));
-    } else {
-      navigate('/ordering', {
-        state: {
-          totalCost: Number(totalCost),
-        },
-      });
-    }
+    navigate('/ordering', {
+      state: {
+        totalCost: Number(totalCost),
+      },
+    });
   };
 
   return (
@@ -68,5 +59,4 @@ export default function CartBar({
 CartBar.propTypes = {
   changeSelectCount: PropTypes.func.isRequired,
   onDeleteProduct: PropTypes.func.isRequired,
-  onSubmit: PropTypes.func.isRequired,
 };

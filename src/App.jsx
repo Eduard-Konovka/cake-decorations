@@ -9,7 +9,13 @@ import {
   updateMainHeight,
   updateCart,
 } from 'state';
-import { Container, AppBar, Footer, PublicRoute } from 'components';
+import {
+  Container,
+  AppBar,
+  Footer,
+  PublicRoute,
+  PrivateRoute,
+} from 'components';
 import { getLanguage } from 'functions';
 import { languageWrapper } from 'middlewares';
 import { GLOBAL, LANGUAGE } from 'constants';
@@ -44,13 +50,15 @@ const SignInView = lazy(() =>
 const SignUpView = lazy(() =>
   import('pages/SignUpView' /* webpackChunkName: "SignUpView" */),
 );
+const ReSignUpView = lazy(() =>
+  import('pages/ReSignUpView' /* webpackChunkName: "ReSignUpView" */),
+);
 const NotFoundView = lazy(() =>
   import('pages/NotFoundView' /* webpackChunkName: "NotFoundView" */),
 );
 
 export default function App() {
   const { cart } = useGlobalState('global');
-  const { user } = useGlobalState('auth');
 
   const changeGlobalState = useChangeGlobalState();
 
@@ -130,7 +138,7 @@ export default function App() {
 
     setTimeout(() => {
       sendСart({
-        customer: customer || user,
+        customer,
         cart: cart.map(obj => ({ _id: obj._id, quantity: obj.count })),
         totalCost,
         type: 'new',
@@ -182,6 +190,15 @@ export default function App() {
               <PublicRoute restricted>
                 <SignUpView />
               </PublicRoute>
+            }
+          />
+
+          <Route
+            path="/resignup"
+            element={
+              <PrivateRoute>
+                <ReSignUpView />
+              </PrivateRoute>
             }
           />
 
@@ -247,7 +264,6 @@ export default function App() {
                   sending={sending}
                   changeSelectCount={changeCount}
                   onDeleteProduct={removeFromCart}
-                  onSubmit={submitCart}
                 />
               </PublicRoute>
             }

@@ -1,12 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import {
-  initialUser,
-  useGlobalState,
-  useChangeGlobalState,
-  authSignUpUser,
-} from 'state';
+import { useGlobalState, useChangeGlobalState, authSignUpUser } from 'state';
 import { Spinner, Button } from 'components';
 import { getLanguage } from 'functions';
 import { languageWrapper } from 'middlewares';
@@ -16,8 +11,9 @@ import s from './SignUpView.module.css';
 
 export default function SignUpView() {
   const { mainHeight } = useGlobalState('global');
+  const { user } = useGlobalState('auth');
   const changeGlobalState = useChangeGlobalState();
-  const initialState = { ...initialUser, password: '' };
+  const initialState = { ...user, password: '' };
 
   const [loading, setLoading] = useState(false);
   const [state, setState] = useState(initialState);
@@ -96,7 +92,7 @@ export default function SignUpView() {
     }));
   };
 
-  const handleLoginPress = () => {
+  const signUpHendler = () => {
     setLoading(true);
 
     if (!state.firstName || state.firstName === '') {
@@ -349,7 +345,7 @@ export default function SignUpView() {
                 state.password.length < GLOBAL.inputs.password.minLength ||
                 state.password.length > GLOBAL.inputs.password.maxLength
               }
-              onClick={handleLoginPress}
+              onClick={signUpHendler}
             >
               {state.email.length > 5 &&
               state.password.length >= GLOBAL.inputs.password.minLength &&
