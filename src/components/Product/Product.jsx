@@ -9,7 +9,7 @@ import { GLOBAL, LANGUAGE } from 'constants';
 import defaultImage from 'assets/notFound.png';
 import s from './Product.module.css';
 
-export default function Product({ product, addToCart }) {
+export default function Product({ product, specificCategory, addToCart }) {
   const { language, categories } = useGlobalState('global');
 
   const languageDeterminer = obj => languageWrapper(getLanguage(), obj);
@@ -50,7 +50,14 @@ export default function Product({ product, addToCart }) {
 
   return (
     <article>
-      <Link to={`/products/${product._id}`} className={s.btnLink}>
+      <Link
+        to={`/products/${product._id}`}
+        className={s.btnLink}
+        onClick={() => {
+          specificCategory &&
+            sessionStorage.setItem('scrollPosition', window.scrollY);
+        }}
+      >
         <div className={s.imageBox}>
           <img
             className={s.image}
@@ -121,5 +128,6 @@ Product.propTypes = {
     price: PropTypes.number.isRequired,
     images: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)),
   }).isRequired,
+  specificCategory: PropTypes.bool.isRequired,
   addToCart: PropTypes.func.isRequired,
 };

@@ -24,6 +24,11 @@ import 'App.css';
 const CategoriesView = lazy(() =>
   import('pages/CategoriesView' /* webpackChunkName: "CategoriesView" */),
 );
+const SpecificCategoryView = lazy(() =>
+  import(
+    'pages/SpecificCategoryView' /* webpackChunkName: "SpecificCategoryView" */
+  ),
+);
 const ProductsView = lazy(() =>
   import('pages/ProductsView' /* webpackChunkName: "ProductsView" */),
 );
@@ -210,6 +215,18 @@ export default function App() {
                   setProductsByCategory={setProductsByCategoryOrTag}
                 />
               </PublicRoute>
+            }
+          />
+
+          <Route
+            path="/categories/:id"
+            element={
+              <PrivateRoute>
+                <SpecificCategoryView
+                  productsByCategoryOrTag={productsByCategoryOrTag}
+                  addToCart={addToCart}
+                />
+              </PrivateRoute>
             }
           />
 
