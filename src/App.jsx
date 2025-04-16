@@ -221,12 +221,12 @@ export default function App() {
           <Route
             path="/categories/:id"
             element={
-              <PrivateRoute>
+              <PublicRoute>
                 <SpecificCategoryView
                   productsByCategoryOrTag={productsByCategoryOrTag}
                   addToCart={addToCart}
                 />
-              </PrivateRoute>
+              </PublicRoute>
             }
           />
 
