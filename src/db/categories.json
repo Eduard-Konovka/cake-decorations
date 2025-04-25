@@ -277,5 +277,14 @@
       "ua": "Вафельний декор"
     },
     "image": "https://firebasestorage.googleapis.com/v0/b/cake-decorations-by-chechina.firebasestorage.app/o/categories%2F1743522962365.jpg?alt=media&token=9b468c7b-fc68-42a9-b4d7-9549b1f7bed7"
+  },
+  {
+    "_id": "1745601000537",
+    "image": "https://firebasestorage.googleapis.com/v0/b/cake-decorations-by-chechina.firebasestorage.app/o/categories%2F1745601000537.jpg?alt=media&token=79933a8a-af24-499a-a8fc-5c67da84984c",
+    "title": {
+      "ua": "Сублімовані ягоди та сухоцвіти",
+      "en": "Sublimated berries and dried flowers",
+      "ru": "Сублимированные ягоды и сухоцветы"
+    }
   }
 ]
