@@ -28,11 +28,15 @@ export default function SelectedProduct({
         )} "${propertyWrapper(language, selectedProduct, 'title')}"`}
         className={s.thumb}
       >
-        <img
-          src={images?.length > 0 ? images[0].url : defaultImage}
-          alt={propertyWrapper(language, selectedProduct, 'title')}
-          className={s.image}
-        />
+        {images?.length > 0 && images[0]?.type === 'video' ? (
+          <video src={images[0].url} className={s.image} />
+        ) : (
+          <img
+            src={images?.length > 0 ? images[0].url : defaultImage}
+            alt={propertyWrapper(language, selectedProduct, 'title')}
+            className={s.image}
+          />
+        )}
 
         <h3 className={s.title}>
           {propertyWrapper(language, selectedProduct, 'title').length <
