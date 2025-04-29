@@ -1785,7 +1785,6 @@
   },
   {
     "_id": "1743583173862",
-    "category": "116763515",
     "product_details": {
       "ua": []
     },
@@ -1802,11 +1801,11 @@
     ],
     "title": {
       "ua": "Сублімовані слайси - лимон 10 г"
-    }
+    },
+    "category": "1745601000537"
   },
   {
     "_id": "1743583185091",
-    "category": "116763515",
     "product_details": {
       "ua": []
     },
@@ -1824,7 +1823,8 @@
     ],
     "title": {
       "ua": "Сублімовані слайси - грейпфрут 10 г"
-    }
+    },
+    "category": "1745601000537"
   },
   {
     "_id": "1743583192869",
@@ -1838,7 +1838,6 @@
     "product_details": {
       "ua": []
     },
-    "category": "116763515",
     "images": [
       {
         "id": "1743583193862",
@@ -1846,7 +1845,8 @@
       }
     ],
     "quantity": 10,
-    "count": 0
+    "count": 0,
+    "category": "1745601000537"
   },
   {
     "_id": "1743583198811",
@@ -1857,7 +1857,6 @@
     "product_details": {
       "ua": []
     },
-    "category": "116763515",
     "quantity": 10,
     "count": 0,
     "images": [
@@ -1868,7 +1867,8 @@
     ],
     "title": {
       "ua": "Сублімовані слайси - апельсин 10 г"
-    }
+    },
+    "category": "1745601000537"
   },
   {
     "_id": "1743583538760",
@@ -7334,7 +7334,6 @@
     "ads_redirect": "https://zatyshno.prom.ua/ua/p2141698651-konditerskie-saharnye-ukrasheniya.html?source=merchant_center",
     "link": "https://zatyshno.prom.ua/ua/p2141698651-konditerskie-saharnye-ukrasheniya.html?source=merchant_center",
     "category": "116763867",
-    "price": 90,
     "brand": "Ateco",
     "product_type": "Кондитерський декор",
     "quantity": 5,
@@ -7349,19 +7348,19 @@
     },
     "images": [
       {
-        "id": "1745574294455",
-        "type": "video",
-        "url": "https://firebasestorage.googleapis.com/v0/b/cake-decorations-by-chechina.firebasestorage.app/o/productsImages%2F1745574188476%2F1745574294455?alt=media&token=acf96c14-9910-4f27-891a-1708cc25d581"
+        "id": "1745914617179",
+        "type": "image",
+        "url": "https://firebasestorage.googleapis.com/v0/b/cake-decorations-by-chechina.firebasestorage.app/o/productsImages%2F1745574188476%2F1745914617179?alt=media&token=36d5702e-f869-4ef6-bf9c-c188117195aa"
       }
     ],
+    "price": 120,
     "title": {
-      "ru": "Кондитерские сахарные украшения набор Футбол",
-      "ua": "Цукровий набір \"1 рік - дівчинка\""
+      "ua": "Цукровий набір \"Джунглі\"",
+      "ru": "Кондитерские сахарные украшения набор Футбол"
     }
   },
   {
     "_id": "1745598277359",
-    "category": "116763515",
     "product_details": {
       "ua": []
     },
@@ -7384,11 +7383,11 @@
     ],
     "title": {
       "ua": "Бутони півонії для декору "
-    }
+    },
+    "category": "1745601000537"
   },
   {
     "_id": "1745598304805",
-    "category": "116763515",
     "product_details": {
       "ua": []
     },
@@ -7407,7 +7406,8 @@
     },
     "title": {
       "ua": "Бутони чайної троянди"
-    }
+    },
+    "category": "1745601000537"
   },
   {
     "_id": "1745598318486",
@@ -7418,7 +7418,6 @@
         "url": "https://firebasestorage.googleapis.com/v0/b/cake-decorations-by-chechina.firebasestorage.app/o/productsImages%2F1745598318486%2F1745598319133?alt=media&token=00924d9e-a84d-423a-a2cb-d95394aebaa5"
       }
     ],
-    "category": "116763515",
     "price": 50,
     "product_details": {
       "ua": []
@@ -7430,11 +7429,11 @@
     },
     "title": {
       "ua": "Гілочки лаванди"
-    }
+    },
+    "category": "1745601000537"
   },
   {
     "_id": "1745598330359",
-    "category": "116763515",
     "price": 50,
     "product_details": {
       "ua": []
@@ -7453,11 +7452,11 @@
     },
     "title": {
       "ua": "Волошка синя для декору"
-    }
+    },
+    "category": "1745601000537"
   },
   {
     "_id": "1745599189085",
-    "category": "116763515",
     "title": {
       "ua": "Верес  (суцвіття з гілочками)  для декору"
     },
@@ -7476,7 +7475,8 @@
     "product_details": {
       "ua": []
     },
-    "count": 0
+    "count": 0,
+    "category": "1745601000537"
   },
   {
     "_id": "1745599263652",
@@ -7490,7 +7490,6 @@
         "url": "https://firebasestorage.googleapis.com/v0/b/cake-decorations-by-chechina.firebasestorage.app/o/productsImages%2F1745599263652%2F1745599264725?alt=media&token=2219cc54-f9cc-482c-b167-c0890fc9bfe3"
       }
     ],
-    "category": "116763515",
     "quantity": 10,
     "product_details": {
       "ua": []
@@ -7499,6 +7498,114 @@
     "count": 0,
     "title": {
       "ua": "Бутони жасмину для декору "
+    },
+    "category": "1745601000537"
+  },
+  {
+    "_id": "1745912878851",
+    "quantity": 10,
+    "product_details": {
+      "ua": []
+    },
+    "category": "1745601000537",
+    "description": {
+      "ua": "Дуже тоненькі та запашні"
+    },
+    "count": 0,
+    "price": 72,
+    "title": {
+      "ua": "Сублімована малина зернятка - лимон 10 г"
+    },
+    "images": [
+      {
+        "id": "1745913230307",
+        "type": "image",
+        "url": "https://firebasestorage.googleapis.com/v0/b/cake-decorations-by-chechina.firebasestorage.app/o/productsImages%2F1745912878851%2F1745913230307?alt=media&token=6f592b55-43ce-42c9-8861-fcb2e7453e0b"
+      }
+    ]
+  },
+  {
+    "_id": "1745912893013",
+    "quantity": 10,
+    "product_details": {
+      "ua": []
+    },
+    "category": "1745601000537",
+    "description": {
+      "ua": "Дуже тоненькі та запашні"
+    },
+    "count": 0,
+    "images": [
+      {
+        "id": "1745912962008",
+        "type": "image",
+        "url": "https://firebasestorage.googleapis.com/v0/b/cake-decorations-by-chechina.firebasestorage.app/o/productsImages%2F1745912893013%2F1745912962008?alt=media&token=061887bf-82ce-4490-88ca-d934378fa146"
+      }
+    ],
+    "price": 84,
+    "title": {
+      "ua": "Сублімована малина ціла -  10 г"
+    }
+  },
+  {
+    "_id": "1745914569066",
+    "images": [],
+    "product_details": {
+      "ua": ""
+    },
+    "product_type": "Кондитерський декор",
+    "title": {
+      "ua": "Цукровий набір \"1 рік - дівчинка\"",
+      "ru": "Кондитерские сахарные украшения набор Футбол"
+    },
+    "category": "116763867",
+    "brand": "Ateco",
+    "quantity": 5,
+    "price": 90,
+    "link": "https://zatyshno.prom.ua/ua/p2141698651-konditerskie-saharnye-ukrasheniya.html?source=merchant_center",
+    "count": 0,
+    "ads_redirect": "https://zatyshno.prom.ua/ua/p2141698651-konditerskie-saharnye-ukrasheniya.html?source=merchant_center",
+    "availability": "in stock",
+    "condition": "new",
+    "identifier_exists": "no",
+    "description": {
+      "default": "Цукрові прикраси — готовий їстівний декор для прикрашання кондитерських виробів. Склад: цукор білий, крохмальна патока, жир кондитерський, загусник трагакант, крохмаль кукурудзяний сухий, кислота лимонна, консервант карбонова кислота, ароматизатор ідентичний натуральному \"Ваніль\", без ГМО. Термін зберігання: 24 місяці. Умови зберігання: за температури не вище 25 °C і відносної вологості повітря не більш ніж 75%. Країна виробника: Україна. Наші інші товари можна подивитися в магазині за посиланнями: барвники харчові натуральні водорозчинні барвники харчові натуральні жиророзчинні барвники харчові синтетичні водорозчинні барвники харчові синтетичні жиророзчинні барвники харчові універсальні барвники харчові для малювання барвники харчові китайські з розпилювачем харчові фломастери й олівці кандурін харчовий золото та срібло кондитерське харчове прикраси на торт посипка їстівна цукрова прикраси на торт фігурки їстівні цукрові прикраси на торт квіти їстівні цукрові прикраси на торт топери їстівні цукрові прикраси на торт кулі шоколадні кондитерські насадки Ateco кондитерські мішки кондитерські термометри ароматизатори харчові глазур, желе, крем, шоколад глітери харчові кондитерські товары бренда DR. OETKER",
+      "ua": "<p>Цукрові прикраси — готовий їстівний декор для прикрашання кондитерських виробів.</p>\r\n\r\n<p>Склад: цукор білий, крохмальна патока, жир кондитерський, загусник трагакант, крохмаль кукурудзяний сухий, кислота лимонна, консервант карбонова кислота, ароматизатор ідентичний натуральному \"Ваніль\", без ГМО.</p>\r\n\r\n<p>Термін зберігання:&nbsp;24 місяці.</p>\r\n\r\n<p>Умови зберігання:&nbsp;за температури не вище 25 °C і відносної вологості повітря не більш ніж 75%.</p>\r\n\r\n<p>Країна виробника: Україна.</p>\r\n\r\n<p><strong>Наші інші товари можна подивитися в магазині за посиланнями:</strong><br>\r\n<a href=\"https://zatyshno.prom.ua/ua/g116762693-krasiteli-pischevye-naturalnye\" target=\"_blank\">барвники харчові натуральні водорозчинні</a><br>\r\n<a href=\"https://zatyshno.prom.ua/ua/g116762700-krasiteli-pischevye-naturalnye\" target=\"_blank\">барвники харчові натуральні жиророзчинні</a><br>\r\n<a href=\"https://zatyshno.prom.ua/ua/g116763004-krasiteli-pischevye-sinteticheskie\" target=\"_blank\">барвники харчові синтетичні водорозчинні</a><br>\r\n<a href=\"https://zatyshno.prom.ua/ua/g116763200-krasiteli-sinteticheskie-pischevye\" target=\"_blank\">барвники харчові синтетичні жиророзчинні</a><br>\r\n<a href=\"https://zatyshno.prom.ua/ua/g116763268-krasiteli-pischevye-universalnye\" target=\"_blank\">барвники харчові універсальні</a><br>\r\n<a href=\"https://zatyshno.prom.ua/ua/g116763300-krasiteli-pischevye-dlya\" target=\"_blank\">барвники харчові для малювання</a><br>\r\n<a href=\"https://zatyshno.prom.ua/ua/g116897236-pischevye-krasiteli-kitajskie\" target=\"_blank\">барвники харчові китайські з розпилювачем</a><br>\r\n<a href=\"https://zatyshno.prom.ua/ua/g118047906-pischevye-flomastery-karandashi\" target=\"_blank\">харчові фломастери й олівці</a><br>\r\n<a href=\"https://zatyshno.prom.ua/ua/g116763326-kandurin-pischevoj\" target=\"_blank\">кандурин харчовий</a><br>\r\n<a href=\"https://zatyshno.prom.ua/ua/g116763469-pischevoe-zoloto-bronza\" target=\"_blank\">золото та срібло кондитерське харчове</a><br>\r\n<a href=\"https://zatyshno.prom.ua/ua/g116763515-ukrasheniya-tort-posypka\" target=\"_blank\">прикраси на торт посипка їстівна цукрова</a><br>\r\n<a href=\"https://zatyshno.prom.ua/ua/g116763867-saharnye-ukrasheniya-figurki\" target=\"_blank\">прикраси на торт фігурки їстівні цукрові</a><br>\r\n<a href=\"https://zatyshno.prom.ua/ua/g117164519-saharnye-ukrasheniya-tsvety\" target=\"_blank\">прикраси на торт квіти їстівні цукрові</a><br>\r\n<a href=\"https://zatyshno.prom.ua/ua/g117164537-saharnye-ukrasheniya-toppery\" target=\"_blank\">прикраси на торт топери їстівні цукрові</a><br>\r\n<a href=\"https://zatyshno.prom.ua/ua/g116896520-shokoladnye-sfery\" target=\"_blank\">прикраси на торт кулі шоколадні</a><br>\r\n<a href=\"https://zatyshno.prom.ua/ua/g116763577-konditerskie-nasadki-ateco\" target=\"_blank\">кондитерські насадки Ateco</a><br>\r\n<a href=\"https://zatyshno.prom.ua/ua/g116894256-konditerskie-meshki-perehodniki\" target=\"_blank\">кондитерські мішки</a><br>\r\n<a href=\"https://zatyshno.prom.ua/ua/g116894392-termometry-konditerskie-kulinarnye\" target=\"_blank\">кондитерські термометри</a><br>\r\n<a href=\"https://zatyshno.prom.ua/ua/g117735788-aromatizatory-pischevye\" target=\"_blank\">ароматизатори харчові</a><br>\r\n<a href=\"https://zatyshno.prom.ua/ua/g117636794-krem-glazur-zhele\" target=\"_blank\">глазур, желе, крем, шоколад</a><br>\r\n<a href=\"https://zatyshno.prom.ua/ua/g117736140-glittery-pischevye-konditerskie\" target=\"_blank\">глітери харчові кондитерські</a><br>\r\n<a href=\"https://zatyshno.prom.ua/ua/g118049846-tovary-brenda-oetker\" target=\"_blank\">товары бренда &nbsp;DR. OETKER</a></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n",
+      "ru": "<p>Сахарные украшения &ndash; готовый съедобный декор для украшения кондитерских изделий.</p>\r\n\r\n<p>Состав: сахар белый, крахмальная патока, жир кондитерский, загуститель трагакант, крахмал кукурузный сухой, кислота лимонная, консервант карбоновая кислота, ароматизатор идентичный натуральному &quot;Ваниль&quot;, без ГМО.</p>\r\n\r\n<p>Срок хранения:&nbsp;24 месяца.</p>\r\n\r\n<p>Условия хранения:&nbsp;при температуре не выше 25 &deg; C и относительной влажности воздуха не более 75%.</p>\r\n\r\n<p>Страна производителя: Украина.</p>\r\n\r\n<p><strong>Наши другие товары можно посмотреть в магазине по ссылкам:</strong><br />\r\n<a href=\"https://zatyshno.prom.ua/ua/g116762693-krasiteli-pischevye-naturalnye\" target=\"_blank\">красители пищевые натуральные водорастворимые</a><br />\r\n<a href=\"https://zatyshno.prom.ua/ua/g116762700-krasiteli-pischevye-naturalnye\" target=\"_blank\">красители пищевые натуральные жирорастворимые</a><br />\r\n<a href=\"https://zatyshno.prom.ua/ua/g116763004-krasiteli-pischevye-sinteticheskie\" target=\"_blank\">красители пищевые синтетические водорастворомые</a><br />\r\n<a href=\"https://zatyshno.prom.ua/ua/g116763200-krasiteli-sinteticheskie-pischevye\" target=\"_blank\">красители пищевые синтетические жирорастворимые</a><br />\r\n<a href=\"https://zatyshno.prom.ua/ua/g116763268-krasiteli-pischevye-universalnye\" target=\"_blank\">красители пищевые универсальные</a><br />\r\n<a href=\"https://zatyshno.prom.ua/ua/g116763300-krasiteli-pischevye-dlya\" target=\"_blank\">красители пищевые для рисования</a><br />\r\n<a href=\"https://zatyshno.prom.ua/ua/g116897236-pischevye-krasiteli-kitajskie\" target=\"_blank\">красители пищевые китайские с распылителем</a><br />\r\n<a href=\"https://zatyshno.prom.ua/ua/g118047906-pischevye-flomastery-karandashi\" target=\"_blank\">пищевые фломастеры и карандаши</a><br />\r\n<a href=\"https://zatyshno.prom.ua/ua/g116763326-kandurin-pischevoj\" target=\"_blank\">кандурин пищевой</a><br />\r\n<a href=\"https://zatyshno.prom.ua/ua/g116763469-pischevoe-zoloto-bronza\" target=\"_blank\">золото и серебро кондитерское пищевое</a><br />\r\n<a href=\"https://zatyshno.prom.ua/ua/g116763515-ukrasheniya-tort-posypka\" target=\"_blank\">украшения на торт посыпка съедобная сахарная</a><br />\r\n<a href=\"https://zatyshno.prom.ua/ua/g116763867-saharnye-ukrasheniya-figurki\" target=\"_blank\">украшения на торт фигурки съедобные сахарные</a><br />\r\n<a href=\"https://zatyshno.prom.ua/ua/g117164519-saharnye-ukrasheniya-tsvety\" target=\"_blank\">украшения на торт цветы съедобные сахарны</a><br />\r\n<a href=\"https://zatyshno.prom.ua/ua/g117164537-saharnye-ukrasheniya-toppery\" target=\"_blank\">украшения на торт топперы съедобные сахарны</a><br />\r\n<a href=\"https://zatyshno.prom.ua/ua/g116896520-shokoladnye-sfery\" target=\"_blank\">украшения на торт шары шоколадные</a><br />\r\n<a href=\"https://zatyshno.prom.ua/ua/g116763577-konditerskie-nasadki-ateco\" target=\"_blank\">кондитерские насадки Ateco</a><br />\r\n<a href=\"https://zatyshno.prom.ua/ua/g116894256-konditerskie-meshki-perehodniki\" target=\"_blank\">кондитерские мешки</a><br />\r\n<a href=\"https://zatyshno.prom.ua/ua/g116894392-termometry-konditerskie-kulinarnye\" target=\"_blank\">кондитерские термометры</a><br />\r\n<a href=\"https://zatyshno.prom.ua/ua/g117735788-aromatizatory-pischevye\" target=\"_blank\">ароматизаторы пищевые</a><br />\r\n<a href=\"https://zatyshno.prom.ua/ua/g117636794-krem-glazur-zhele\" target=\"_blank\">глазурь, желе, крем, шоколад</a><br />\r\n<a href=\"https://zatyshno.prom.ua/ua/g117736140-glittery-pischevye-konditerskie\" target=\"_blank\">глитеры пищевые кондитерские</a><br />\r\n<a href=\"https://zatyshno.prom.ua/ua/g118049846-tovary-brenda-oetker\" target=\"_blank\">товары бренда &nbsp;DR. OETKER</a></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n"
+    },
+    "color": "Білий"
+  },
+  {
+    "_id": "1745914927858",
+    "link": "https://zatyshno.prom.ua/ua/p2140169979-saharnoe-ukrashenie-dlya.html?source=merchant_center",
+    "ads_redirect": "https://zatyshno.prom.ua/ua/p2140169979-saharnoe-ukrashenie-dlya.html?source=merchant_center",
+    "color": "Рожевий",
+    "product_type": "Кондитерський декор",
+    "availability": "in stock",
+    "identifier_exists": "no",
+    "condition": "new",
+    "category": "117164519",
+    "count": 0,
+    "images": [
+      {
+        "id": "1745915321276",
+        "type": "image",
+        "url": "https://firebasestorage.googleapis.com/v0/b/cake-decorations-by-chechina.firebasestorage.app/o/productsImages%2F1745914927858%2F1745915321276?alt=media&token=5693b8f2-9fb5-4651-a637-6e95a9186eab"
+      }
+    ],
+    "quantity": 5,
+    "price": 50,
+    "description": {
+      "default": "Склад набору: квіточки у кількості 35 шт. Фігурки із солодкої мастики — це неймовірно вишукані та прекрасні кондитерські вироби, які можуть бути не тільки прикрасою десертів, тортів і тістечок, але й дуже оригінальним подарунком. Виготовлений із цукрової пасти. Зберігати за температури не вище 25 °C і відносної вологості повітря не більш ніж 75%. Термін придатності: 24 місяці. Фігурка упакована в щільну пластикову коробочку.",
+      "ua": "\n\n<p>Фігурки із солодкої мастики — це неймовірно вишукані та прекрасні кондитерські вироби, які можуть бути не тільки прикрасою десертів, тортів і тістечок, але й дуже оригінальним подарунком.</p>\n\n<p>Виготовлений із цукрової пасти.<br>\nЗберігати за температури не вище 25 °C і відносної вологості повітря не більш ніж 75%.<br>\nТермін придатності: 24 місяці.<br>\nФігурка упакована в щільну пластикову коробочку.</p>\n",
+      "ru": "<p>Состав набора:</p>\r\n\r\n<p>цветочки&nbsp; в количестве 35 шт.</p>\r\n\r\n<p>Фигурки из сладкой мастики &ndash; это невероятно изысканные и прекрасные кондитерские изделия, которые могут быть не только украшением десертов, тортов и пирожных, но и весьма оригинальным подарком.</p>\r\n\r\n<p>Изготовлен из сахарной пасты.<br />\r\nХранить при температуре не выше 25&deg;С и относительной влажности воздуха не более 75%.<br />\r\nСрок годности: 24 месяца.<br />\r\nФигурка упакована в плотную пластиковую коробочку.</p>\r\n"
+    },
+    "product_details": {
+      "ua": ""
+    },
+    "title": {
+      "ru": "Сахарное украшение для торта весенние цветы розовые (7 шт)",
+      "ua": "Цукрова прикраса для торта весняні квіти(різні кольори)"
     }
   },
   {
@@ -12951,7 +13058,6 @@
       }
     ],
     "availability": "in stock",
-    "price": 102,
     "product_type": "Кондитерський декор",
     "brand": "Ateco",
     "identifier_exists": "no",
@@ -12977,7 +13083,9 @@
         }
       ]
     },
-    "category": "116763867"
+    "category": "116763867",
+    "quantity": 5,
+    "price": 130
   },
   {
     "_id": "1813504435",
@@ -17515,12 +17623,16 @@
       }
     ],
     "availability": "in stock",
-    "price": 109,
     "product_type": "Кондитерський декор",
     "identifier_exists": "no",
     "condition": "new",
     "color": "Білий",
-    "category": "116763867"
+    "category": "116763867",
+    "quantity": 5,
+    "price": 135,
+    "product_details": {
+      "ua": ""
+    }
   },
   {
     "_id": "1838172589",
@@ -27103,12 +27215,16 @@
       }
     ],
     "availability": "out of stock",
-    "price": 165,
     "product_type": "Кондитерський декор",
     "identifier_exists": "no",
     "condition": "new",
     "color": "Білий",
-    "category": "116763867"
+    "category": "116763867",
+    "quantity": 5,
+    "price": 220,
+    "product_details": {
+      "ua": ""
+    }
   },
   {
     "_id": "1964439632",
@@ -27261,11 +27377,15 @@
       }
     ],
     "availability": "in stock",
-    "price": 181,
     "product_type": "Кондитерський декор",
     "identifier_exists": "no",
     "condition": "new",
-    "category": "116763867"
+    "category": "116763867",
+    "quantity": 5,
+    "price": 207,
+    "product_details": {
+      "ua": ""
+    }
   },
   {
     "_id": "1970438692",
