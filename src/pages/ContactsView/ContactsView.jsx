@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useGlobalState } from 'state';
-import { getLanguage, pageUp } from 'functions';
+import { getLanguage, setScrollPosition } from 'functions';
 import { languageWrapper } from 'middlewares';
 import { LANGUAGE } from 'constants';
 import s from './ContactsView.module.css';
@@ -11,7 +11,7 @@ export default function ContactsView() {
 
   const languageDeterminer = obj => languageWrapper(getLanguage(), obj);
 
-  useEffect(pageUp, []);
+  useEffect(setScrollPosition, []);
 
   return (
     <main className={s.page} style={{ minHeight: mainHeight }}>

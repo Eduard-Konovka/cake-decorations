@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useGlobalState } from 'state';
 import { CartBar, Blank, Processing } from 'components';
-import { getLanguage, pageUp } from 'functions';
+import { getLanguage, setScrollPosition } from 'functions';
 import { languageWrapper } from 'middlewares';
 import { LANGUAGE } from 'constants';
 import imageBlank from 'assets/cartEmpty.png';
@@ -17,7 +17,7 @@ export default function CartView({
 
   const languageDeterminer = obj => languageWrapper(getLanguage(), obj);
 
-  useEffect(pageUp, []);
+  useEffect(setScrollPosition, []);
 
   return (
     <main

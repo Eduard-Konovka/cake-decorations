@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { useGlobalState, useChangeGlobalState, updateProducts } from 'state';
 import { fetchProducts } from 'api';
 import { Spinner, Blank, Button, OptionList, ProductList } from 'components';
-import { getLanguage, pageUp } from 'functions';
+import { getLanguage, setScrollPosition } from 'functions';
 import { languageWrapper, propertyWrapper } from 'middlewares';
 import { GLOBAL, LANGUAGE } from 'constants';
 import { ReactComponent as SearchIcon } from 'assets/search.svg';
@@ -74,9 +74,12 @@ export default function SpecificCategoryView({
   useEffect(() => {
     if (visibleProducts.length !== 0) {
       const savedPosition = sessionStorage.getItem('scrollPosition');
+
       if (savedPosition !== null) {
-        window.scrollTo(0, parseInt(savedPosition, 10));
+        setScrollPosition(parseInt(savedPosition, 10));
         sessionStorage.removeItem('scrollPosition');
+      } else {
+        setScrollPosition();
       }
     }
   }, [visibleProducts]);
@@ -233,7 +236,7 @@ export default function SpecificCategoryView({
   }
 
   function upHandler() {
-    requestAnimationFrame(() => pageUp());
+    requestAnimationFrame(() => setScrollPosition());
   }
 
   return (

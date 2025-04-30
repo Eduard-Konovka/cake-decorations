@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useGlobalState } from 'state';
-import { getLanguage, pageUp } from 'functions';
+import { getLanguage, setScrollPosition } from 'functions';
 import { languageWrapper } from 'middlewares';
 import { LANGUAGE } from 'constants';
 import s from './DeliveryView.module.css';
@@ -10,7 +10,7 @@ export default function DeliveryView() {
 
   const languageDeterminer = obj => languageWrapper(getLanguage(), obj);
 
-  useEffect(pageUp, []);
+  useEffect(setScrollPosition, []);
 
   return (
     <main className={s.page} style={{ minHeight: mainHeight }}>

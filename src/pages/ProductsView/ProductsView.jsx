@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { useGlobalState, useChangeGlobalState, updateProducts } from 'state';
 import { fetchProducts } from 'api';
 import { Spinner, Blank, Button, OptionList, ProductList } from 'components';
-import { getLanguage, pageUp } from 'functions';
+import { getLanguage, setScrollPosition } from 'functions';
 import { languageWrapper, propertyWrapper } from 'middlewares';
 import { GLOBAL, LANGUAGE } from 'constants';
 import { ReactComponent as SearchIcon } from 'assets/search.svg';
@@ -31,7 +31,7 @@ export default function ProductsView({ productsByCategoryOrTag, addToCart }) {
 
   const languageDeterminer = obj => languageWrapper(getLanguage(), obj);
 
-  useEffect(pageUp, []);
+  useEffect(setScrollPosition, []);
 
   useEffect(() => {
     window.onscroll = () =>
@@ -312,7 +312,7 @@ export default function ProductsView({ productsByCategoryOrTag, addToCart }) {
   function upHandler() {
     setOrdinalOfDozen(1);
 
-    setTimeout(pageUp, 100);
+    setTimeout(setScrollPosition, 100);
   }
 
   return (
