@@ -260,7 +260,7 @@ export default function SpecificCategoryView({
       {!loading && !error && (
         <>
           <section className={s.titleSection}>
-            <form className={s.sortBar}>
+            <div className={s.sortBar}>
               <h2 className={s.categoryTitle}>
                 <span className={s.categoryTitleSpan}>
                   {languageDeterminer(LANGUAGE.category)}
@@ -268,7 +268,7 @@ export default function SpecificCategoryView({
 
                 {propertyWrapper(language, category, 'title')}
               </h2>
-            </form>
+            </div>
           </section>
 
           <section className={s.bars}>
