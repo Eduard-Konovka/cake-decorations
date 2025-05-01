@@ -53,18 +53,14 @@ export default function SpecificCategoryView({
               secondProduct._id - firstProduct._id,
           );
           changeGlobalState(updateProducts, products);
-          setProductsByName(productsByCategoryOrTag);
-          setProductsByPrice(productsByCategoryOrTag);
         })
         .catch(error => setError(error))
         .finally(() => setLoading(false));
-    } else if (productsByCategoryOrTag.length !== 0) {
-      setProductsByName(productsByCategoryOrTag);
-      setProductsByPrice(productsByCategoryOrTag);
-    } else {
-      setProductsByName(productsByCategoryOrTag);
-      setProductsByPrice(productsByCategoryOrTag);
     }
+
+    setProductsByName(productsByCategoryOrTag);
+    setProductsByPrice(productsByCategoryOrTag);
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
