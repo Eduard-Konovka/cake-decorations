@@ -233,6 +233,12 @@ export const LANGUAGE = {
     rus: 'На данный момент в магазине нет товаров в продаже',
   },
 
+  category: {
+    eng: 'Product category: ',
+    ukr: 'Категорія товарів: ',
+    rus: 'Категория товаров: ',
+  },
+
   searchByName: {
     title: {
       eng: 'Search by product name',
